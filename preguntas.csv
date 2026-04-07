@@ -1,0 +1,120 @@
+pregunta,respuesta,explicacion
+En un entorno cooperativo los jugadores tienen metas compartidas,T,Comparten el mismo objetivo
+En un escenario antagónico los objetivos de los jugadores son opuestos,T,Cada jugador busca perjudicar al otro
+En un juego de suma cero ambos jugadores pueden ganar a la vez,F,La ganancia de uno implica la pérdida del otro
+En un juego de suma cero la utilidad final de los jugadores es opuesta,T,Lo que gana uno lo pierde el otro
+En IA los juegos típicos suelen ser de dos jugadores deterministas y de información perfecta,T,Es el caso clásico estudiado en minimax
+En un juego de información perfecta los jugadores conocen toda la historia del estado actual,T,No hay información oculta relevante
+En los juegos físicos las reglas suelen ser más precisas que en ajedrez,F,Suelen ser más imprecisas y complejas
+El ajedrez tiene un factor de ramificación medio muy bajo,F,El factor de ramificación es alto
+Los problemas de búsqueda en juegos suelen requerir decidir antes de explorar todo el árbol completo,T,Explorar todo suele ser inviable
+Las acciones de un agente pueden afectar al rendimiento de los demás,T,Los agentes interactúan entre sí
+En un juego bipersonal siempre hay elementos de azar,F,Puede no haber azar
+En juegos con información incompleta los jugadores conocen exactamente todos los estados del rival,F,Hay incertidumbre sobre el estado real
+En Tres en Raya max usa X y min usa O,T,Es la convención habitual
+En Tres en Raya max empieza la partida,T,Max realiza la primera jugada
+Una partida de Tres en Raya puede acabar en empate,T,Si nadie alinea tres fichas
+Una hoja de un árbol de juego completamente desarrollado representa una posición terminal,T,No tiene sucesores
+Un árbol de juego puede ser vacío,F,Por definición no puede serlo
+La raíz de un árbol de juego minimax está etiquetada como max,T,La raíz corresponde al jugador que inicia
+Todos los sucesores de un nodo max están etiquetados como min,T,Alternan los turnos
+Todos los sucesores de un nodo min están etiquetados como max,T,La alternancia es obligatoria
+Cada nivel del árbol de juego representa un ply o media jugada,T,Cada nivel avanza un turno
+En los nodos max le toca jugar al agente max,T,Representan su turno
+En los nodos min le toca jugar al agente min,T,Representan su turno
+La función expandir codifica las jugadas permitidas desde un estado,T,Genera los sucesores legales
+La función de utilidad solo está definida en estados terminales,T,En el modelo básico sí
+En juegos de suma nula si max gana min necesariamente pierde,T,Las utilidades son opuestas
+En juegos de suma nula el valor de empate suele ser 0,T,Es la convención estándar
+Mini-max realiza una exploración primero en anchura del árbol de juego,F,Se expande en profundidad
+Mini-max genera el árbol de juego completo hasta las hojas terminales,T,En su versión básica
+Mini-max usa funciones mutuamente recursivas para max y min,T,MaxValor y MinValor
+En un nodo max se elige el sucesor con mayor utilidad,T,Busca maximizar
+En un nodo min se elige el sucesor con menor utilidad,T,Busca minimizar
+Mini-max busca maximizar la utilidad mínima garantizada para max,T,Esa es la idea del peor caso
+La jugada óptima de max es la que lleva al sucesor con valor máximo en la raíz,T,Se elige el mejor valor propagado
+Si min es racional max debe asumir que min elegirá la peor opción para max,T,Esa es la hipótesis adversaria
+Si min no es racional la jugada elegida por max siempre será la misma,F,Puede cambiar si min comete errores
+En mini-max básico se pueden eliminar nodos que nunca serán alcanzados por la estrategia óptima,F,No los poda por sí solo
+Mini-max básico siempre encuentra la mejor jugada aunque el árbol sea inmenso,F,La complejidad lo hace inviable
+La complejidad de mini-max crece de forma exponencial con la profundidad,T,Crece muy rápido
+Mini-max sin suspensión necesita llegar siempre a estados terminales,T,No usa corte por profundidad
+Cuando no se puede llegar al final del juego se usa una prueba de suspensión,T,Permite cortar antes del final
+Una función de evaluación debe coincidir con la utilidad real en nodos terminales,T,Debe ser coherente con U
+Una función de evaluación puede ser lineal ponderada,T,Es una forma habitual
+En Tres en Raya una heurística puede contar líneas abiertas para max y restar las de min,T,Es una heurística clásica
+Con suspensión las jugadas de mini-max siguen siendo necesariamente óptimas,F,Dependen de la heurística
+Cuanto mejor sea la heurística más fiables serán las decisiones con suspensión,T,La estimación mejora
+La evaluación en un nodo de suspensión sustituye a la prueba terminal,T,Se evalúa antes de terminar
+El efecto horizonte puede afectar a la calidad de la decisión,T,Puede ocultar amenazas lejanas
+La poda alfa beta mejora la velocidad pero no cambia la solución final de mini-max,T,No altera el resultado
+La poda alfa beta puede empeorar la jugada elegida respecto a mini-max simple,F,La solución sigue siendo la misma
+La poda alfa beta sirve para descartar nodos irrelevantes,T,Evita explorar ramas inútiles
+alpha representa la mejor evaluación encontrada hasta el momento para max,T,Es el mejor valor garantizado para max
+beta representa la mejor evaluación encontrada hasta el momento para min,T,Es el mejor valor garantizado para min
+En un nodo max se puede podar cuando alpha es mayor o igual que beta,T,Condición de poda
+En un nodo min se puede podar cuando beta es menor o igual que alpha,T,Condición dual de poda
+En poda alfa beta el orden de exploración de hijos puede influir en cuántos nodos se podan,T,La eficiencia depende del orden
+Si un nodo max ya ha encontrado un valor alpha suficientemente alto algunos sucesores dejan de importar,T,La poda elimina ramas peores
+La poda beta es la versión dual de la poda alpha,T,Actúa simétricamente
+La poda alfa beta elimina siempre la necesidad de evaluar toda la parte del árbol,F,No siempre poda todo
+La poda alfa beta garantiza encontrar una jugada peor que mini-max pero más rápido,F,Encuentra la misma jugada
+En la simulación de alfa beta se usa alpha inicial en menos infinito y beta inicial en más infinito,T,Es la inicialización estándar
+Si el valor de un nodo min baja por debajo de alpha puede cortarse la exploración restante,T,Ya no puede mejorar el resultado
+Si el valor de un nodo max sube por encima de beta puede cortarse la exploración restante,T,Ya no necesita seguir explorando
+En poda alfa beta los valores de alpha y beta se actualizan únicamente en nodos hoja,F,También se actualizan en nodos internos
+La poda alfa beta funciona incluso con una función de evaluación aproximada en nodos suspendidos,T,Se puede usar con heurísticas
+Mini-max con poda alfa beta sigue siendo un algoritmo de profundidad primero,T,La exploración base es en profundidad
+Una buena ordenación de jugadas puede aumentar mucho la eficacia de la poda,T,Facilita encontrar cortes antes
+Alfa beta solo sirve en juegos de un jugador,F,Se aplica a juegos adversarios
+Alfa beta no cambia el resultado final respecto a mini-max porque solo evita trabajo inútil,T,No altera la decisión
+La poda alfa beta puede hacer que el algoritmo sea más rápido sin perder corrección,T,Reduce trabajo sin cambiar el valor
+En expect mini max aparece un nuevo tipo de nodo llamado nodo azar,T,Introduce probabilidades
+Un nodo azar representa una mala jugada del jugador min,F,No es una jugada sino un evento aleatorio
+En un nodo azar con k sucesores equiprobables se calcula la media de sus evaluaciones,T,Se usa esperanza matemática
+Los nodos azar pueden considerarse un agente más del juego,T,Modelan el azar como un turno especial
+Expect mini max es útil cuando hay elementos de azar en el juego,T,Se usa en juegos con probabilidad
+En expect mini max los nodos azar siempre toman el máximo de sus hijos,F,No maximizan
+En expect mini max los nodos azar siempre toman el mínimo de sus hijos,F,No minimizan
+Si un juego tiene dados o reparto aleatorio expect mini max puede ser más adecuado que mini max puro,T,El azar debe modelarse
+En expect mini max la probabilidad de cada acción en un nodo azar puede influir en la evaluación,T,El valor depende de las probabilidades
+Un nodo azar con dos sucesores de valores 3 y 7 y probabilidades 0,5 y 0,5 se evalúa como 5,T,La media es 5
+El algoritmo mini max puede aplicarse directamente a Parchís sin considerar el azar,F,El azar es relevante
+El algoritmo mini max se puede aplicar a Damas,T,Es un juego determinista
+El algoritmo mini max se puede aplicar a Pacman,T,Se puede modelar con adversario
+El algoritmo mini max se puede aplicar a Tres en Raya,T,Es el ejemplo clásico
+Si hay azar relevante mini max puro puede quedarse corto,T,No modela probabilidades
+En juegos con más de dos jugadores basta con una utilidad escalar para cada estado,F,Suele hacer falta un vector
+En juegos con más de dos jugadores es habitual usar un vector de utilidades,T,Cada jugador tiene su valor
+En juegos con más de dos jugadores pueden aparecer alianzas implícitas,T,Las estrategias pueden coordinarse
+En juegos con más de dos jugadores se pueden modelar decisiones con búsqueda no informada,T,Es una posibilidad básica
+En un juego de tres personas de suma no nula la mejor jugada depende solo del valor para J1,F,Importan los valores de todos
+En un juego de tres jugadores sin alianzas cada hoja puede evaluarse con una tripleta de valores,T,Cada jugador tiene su utilidad
+En una tripleta de utilidad xi representa el valor del nodo para el jugador Ji,T,Cada componente es para un jugador
+En un árbol de tres jugadores la propagación de valores no tiene por qué ser igual que en mini max bipolar,T,La regla cambia
+En un juego de tres jugadores el valor de un estado puede depender de los intereses de varios jugadores a la vez,T,No es suma cero simple
+En el laboratorio de Connect Four el tablero se representa con una matriz de 6 filas y 7 columnas,T,Así se modela el tablero
+En el laboratorio de Connect Four los jugadores se representan como 1 y menos 1 y las casillas vacías como 0,T,Es la codificación propuesta
+En Connect Four una ficha cae hasta la posición más baja disponible de la columna elegida,T,Es la regla del juego
+En Connect Four gana quien alinea cuatro fichas consecutivas en horizontal vertical o diagonal,T,Es la condición de victoria
+En Connect Four si el tablero se llena y nadie alinea cuatro la partida termina en empate,T,Es la condición de empate
+En la práctica de laboratorio se propone implementar mini max y luego mejorarlo con poda alfa beta,T,Es parte del objetivo
+En la práctica de laboratorio se sugiere registrar el número de nodos evaluados y la profundidad usada,T,Es una métrica importante
+En la práctica de laboratorio la poda alfa beta se usa para comparar rendimiento con mini max,T,Se mide la mejora
+En la práctica de laboratorio la representación del estado no es importante si ya existe la función de evaluación,F,La representación es esencial
+En la práctica de laboratorio la mejora se analiza comparando tiempo de ejecución y número de nodos evaluados,T,Son las medidas clave
+En un árbol de juego todos los nodos del mismo nivel pertenecen al mismo jugador,T,Los niveles alternan max y min
+En un árbol de juego los nodos terminales no tienen sucesores,T,Son hojas
+En un juego de suma cero la utilidad del ganador y del perdedor siempre suma cero,T,La suma es nula
+En mini max los nodos hoja deben ser evaluados antes de propagar valores hacia arriba,T,Primero se valora abajo
+La poda alfa beta cambia el orden lógico de max y min,F,La alternancia no cambia
+La poda alfa beta puede podar ramas sin afectar al valor final del nodo raíz,T,La poda es segura
+En expect mini max la esperanza matemática reemplaza al máximo y al mínimo en los nodos azar,T,Se calcula valor esperado
+La heurística de Tres en Raya puede basarse en líneas abiertas para ambos jugadores,T,Es una heurística común
+La función de evaluación en juegos con suspensión intenta estimar la utilidad esperada,T,No llega al final pero aproxima
+La teoría de juegos en IA trata cualquier entorno multiagente como un juego si el impacto entre agentes es significativo,T,Es la definición general
+Los escenarios parcialmente cooperativos tienen metas completamente opuestas,F,Comparten algunas metas
+En un juego determinista el resultado de una acción está definido por reglas precisas,T,No interviene azar
+La raíz de un árbol minimax no puede estar etiquetada como min,T,La raíz del modelo básico es max
+En poda alfa beta un mejor orden de exploración puede provocar más cortes,T,Mejora la poda
+En juegos con información perfecta puede haber azar,F,La información perfecta no excluye el azar

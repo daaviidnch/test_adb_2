@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test Minimax - El Sabio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    
+  <main class="app">
+    <section class="card">
+      <header class="card__top">
+        <div>
+          <p class="eyebrow">El Sabio</p>
+          <h1 class="title">Test Minimax</h1>
+        </div>
+
+        <div class="xp-badge">
+          <span class="xp-badge__label">Puntos</span>
+          <span id="score" class="xp-badge__value">0</span>
+        </div>
+      </header>
+
+      <div class="meta">
+        <div>
+          <p class="meta__label">Ronda actual</p>
+          <p id="roundText" class="meta__value">1</p>
+        </div>
+
+        <div>
+          <p class="meta__label">Progreso</p>
+          <p id="progressText" class="meta__value">Pregunta 1 de 1</p>
+        </div>
+      </div>
+
+      <div class="progress">
+        <div id="progressBar" class="progress__bar"></div>
+      </div>
+
+      <section class="question-area">
+        <p id="question" class="question">
+          Cargando pregunta...
+        </p>
+      </section>
+
+      <div class="actions">
+        <button id="trueBtn" class="btn btn--true" onclick="answer(true)">
+          Verdadero
+        </button>
+
+        <button id="falseBtn" class="btn btn--false" onclick="answer(false)">
+          Falso
+        </button>
+      </div>
+
+      <div class="feedback-wrap">
+        <p id="result" class="feedback"></p>
+      </div>
+
+      <footer class="footer">
+        <button id="nextBtn" class="next-btn" onclick="nextQuestion()" disabled>
+          Siguiente pregunta
+        </button>
+      </footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
