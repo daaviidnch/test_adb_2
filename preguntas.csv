@@ -1,105 +1,11 @@
 pregunta,respuesta,explicacion
-En un juego de suma cero ambos jugadores no pueden perder simultáneamente,T,La suma de utilidades es cero
-En un juego de suma cero ambos jugadores no pueden ganar simultáneamente,T,Uno gana lo que el otro pierde
-En un juego de suma cero es posible que ambos jugadores pierdan,F,La pérdida de uno implica ganancia del otro
-En un juego de suma cero la suma de utilidades puede ser distinta de cero,F,Por definición suma cero
-En un juego determinista el resultado de una acción depende del azar,F,Está completamente definido
-En un juego no determinista el resultado de una acción está completamente definido,F,Interviene el azar
-En un juego de información perfecta puede existir información oculta,F,Se conoce todo el estado
-En un juego de información imperfecta se conoce toda la historia del juego,F,Falta información
-En un juego de dos jugadores siempre hay un ganador,F,Pueden empatar
-En un juego de dos jugadores puede haber empate,T,No siempre hay victoria
-En un árbol de juego la raíz representa un estado terminal,F,Es el estado inicial
-En un árbol de juego una hoja siempre tiene sucesores,F,Las hojas no tienen hijos
-En un árbol de juego una hoja nunca tiene sucesores,T,Definición de hoja
-En un árbol de juego todos los caminos tienen la misma longitud,F,Pueden variar
-En un árbol minimax los nodos alternan entre max y min,T,Turnos alternos
-En un árbol minimax dos nodos consecutivos pueden ser max,F,Siempre alternan
-En minimax max intenta minimizar su utilidad,F,Busca maximizar
-En minimax min intenta maximizar la utilidad de max,F,Busca minimizar
-En minimax max asume que min juega aleatoriamente,F,Asume rival perfecto
-En minimax max asume que min juega de forma óptima,T,Rival racional
-En minimax min asume que max juega de forma subóptima,F,Asume rival óptimo
-En minimax el valor de un nodo max es el mínimo de sus hijos,F,Es el máximo
-En minimax el valor de un nodo min es el máximo de sus hijos,F,Es el mínimo
-En minimax la propagación empieza en la raíz,F,Empieza en hojas
-En minimax la propagación empieza en las hojas,T,Se evalúa de abajo arriba
-En minimax siempre se explora el árbol completo,F,Puede cortarse
-En minimax básico no se realiza poda,T,No hay optimización
-En minimax el orden de exploración no afecta al resultado,T,Resultado es el mismo
-En minimax el orden de exploración puede afectar al resultado,F,Solo afecta al tiempo
-En minimax la complejidad es lineal,F,Es exponencial
-En minimax la complejidad es exponencial,T,Crece muy rápido
-En minimax se puede usar sin función de utilidad,F,Necesaria en hojas
-En minimax la función de utilidad puede aplicarse en nodos no terminales,F,Es para terminales
-En minimax con heurística se pueden evaluar nodos no terminales,T,Se usa estimación
-Una heurística siempre da el valor exacto del estado,F,Es aproximada
-Una heurística intenta aproximar el valor real,T,No es exacta
-Una heurística perfecta elimina la necesidad de explorar el árbol,T,Ya sabes el resultado
-Una heurística mala puede empeorar la decisión,T,Da malas estimaciones
-Una heurística siempre mejora el resultado,F,Puede confundir
-La poda alfa beta cambia el resultado de minimax,F,Solo optimiza
-La poda alfa beta siempre poda al menos un nodo,F,Puede no podar nada
-La poda alfa beta puede no podar ningún nodo,T,Depende del orden
-La poda alfa beta depende del orden de exploración,T,Orden importa
-La poda alfa beta funciona mejor con mal orden de nodos,F,Funciona mejor con buen orden
-La poda alfa beta reduce el número de nodos evaluados,T,Evita ramas inútiles
-La poda alfa beta elimina la necesidad de heurísticas,F,Son cosas distintas
-En alfa beta α representa el peor valor para max,F,Es el mejor encontrado
-En alfa beta β representa el mejor valor para max,F,Es el mejor de min
-En alfa beta α es el mejor valor encontrado para max,T,Valor máximo conocido
-En alfa beta β es el mejor valor encontrado para min,T,Valor mínimo conocido
-En alfa beta se poda cuando α < β,F,Se poda cuando α ≥ β
-En alfa beta se poda cuando α ≥ β,T,Condición de corte
-En alfa beta se actualiza α en nodos min,F,Se actualiza en max
-En alfa beta se actualiza β en nodos max,F,Se actualiza en min
-En alfa beta solo se actualizan valores en hojas,F,También en nodos internos
-En alfa beta se pueden podar ramas completas,T,Se descartan subárboles
-En alfa beta nunca se pierde información relevante,T,No cambia resultado
-En alfa beta se puede perder la solución óptima,F,Siempre la conserva
-En expectiminimax los nodos azar eligen el máximo,F,No maximizan
-En expectiminimax los nodos azar eligen el mínimo,F,No minimizan
-En expectiminimax los nodos azar calculan la media,T,Valor esperado
-En expectiminimax siempre se asume probabilidad uniforme,F,Pueden variar
-En expectiminimax las probabilidades influyen en el resultado,T,Cambian el valor esperado
-En expectiminimax no se utilizan nodos min,F,Sí se usan
-En expectiminimax no se utilizan nodos max,F,Sí se usan
-En expectiminimax solo hay nodos azar,F,Hay tres tipos
-En expectiminimax se combinan max min y azar,T,Se mezclan nodos
-En expectiminimax el valor esperado puede ser decimal,T,Es una media
-En juegos con azar minimax puro es suficiente,F,Falta probabilidad
-En juegos sin azar expectiminimax es obligatorio,F,No hace falta
-En juegos con más de dos jugadores siempre hay suma cero,F,Puede no serlo
-En juegos con más de dos jugadores siempre hay un ganador,F,Pueden empatar
-En juegos con más de dos jugadores cada jugador maximiza su utilidad,T,Cada uno va a lo suyo
-En juegos con más de dos jugadores se usa un único valor,F,Se usa vector
-En juegos con más de dos jugadores se usa un vector de valores,T,Uno por jugador
-En juegos de tres jugadores todos minimizan a uno,F,No hay min global
-En juegos de tres jugadores cada uno actúa de forma independiente,T,Decisión individual
-En juegos de tres jugadores no pueden existir alianzas,F,Pueden surgir
-En juegos de tres jugadores pueden existir alianzas implícitas,T,Cooperación indirecta
-En juegos de tres jugadores el concepto de min desaparece,T,No hay enemigo único
-En juegos de tres jugadores sigue existiendo un nodo min clásico,F,Cambia el modelo
-En un nodo de jugador A se maximiza el valor de B,F,Cada uno maximiza el suyo
-En un nodo de jugador A se maximiza el valor de A,T,Decisión egoísta
-En un vector de utilidades cada componente pertenece a un jugador,T,Un valor por jugador
-En un vector de utilidades todos los jugadores comparten el mismo valor,F,Son distintos
-En un vector de utilidades la suma siempre es cero,F,No necesariamente
-En un nodo de tres jugadores se elige el máximo global,F,Se mira componente propio
-En un nodo de tres jugadores se elige el máximo del jugador actual,T,Criterio individual
-En Connect Four el tablero es de 7 filas y 6 columnas,F,Es 6x7
-En Connect Four el tablero es de 6 filas y 7 columnas,T,Dimensión correcta
-En Connect Four una ficha puede quedarse flotando,F,Cae al fondo
-En Connect Four una ficha cae hasta la posición más baja disponible,T,Regla del juego
-En Connect Four solo se puede ganar en horizontal,F,Hay más formas
-En Connect Four se puede ganar en horizontal vertical y diagonal,T,Tres direcciones
-En Connect Four siempre hay ganador,F,Puede haber empate
-En Connect Four puede haber empate,T,Tablero lleno sin línea
-En Connect Four las casillas vacías se representan con 1,F,Se usa 0
-En Connect Four las casillas vacías se representan con 0,T,Valor neutro
-En Connect Four los jugadores se representan como 1 y -1,T,Convención habitual
-En Connect Four los jugadores se representan como 0 y 1,F,0 es vacío
-En minimax el rival coopera contigo,F,Es adversario
-En minimax el rival intenta perjudicarte,T,Minimiza tu utilidad
-En minimax siempre se elige la primera opción,F,Se elige la mejor
-En minimax se elige la mejor opción según evaluación,T,Criterio de decisión
+Dado un árbol de juego completamente desarrollado los nodos hoja representan las posiciones a partir de las cuales el jugador min puede ganar,F,Las hojas representan estados terminales no solo victorias de min
+El algoritmo mini-max con suspensión lleva siempre la búsqueda a los nodos terminales,F,Con suspensión se corta antes de llegar a terminales
+En la búsqueda con adversario una estrategia óptima conduce a resultados tan buenos como cualquier otra estrategia cuando se juega contra un adversario infalible,F,Debe ser al menos tan buena no igual
+En un juego bipersonal de suma cero la función de utilidad en los estados terminales puede devolver valores negativos para el jugador max,T,Los valores pueden ser negativos para representar pérdidas
+La condición de poda alfa-beta es que el valor de alfa debe ser menor que el valor de beta,F,La poda ocurre cuando alfa es mayor o igual que beta
+En el algoritmo mini-max los nodos min seleccionan la utilidad máxima de sus sucesores directos,F,Los nodos min eligen el mínimo
+Para juegos de múltiples jugadores el vector de valores en los estados terminales da la utilidad desde el punto de vista del jugador max,F,Debe representar la utilidad de cada jugador
+En el algoritmo expect-mini-max los sucesores de un nodo azar tienen asociada la probabilidad de que ese resultado ocurra,T,Los nodos azar usan probabilidades
+La complejidad del algoritmo expect-mini-max es proporcional al número de nodos en el árbol,T,Se exploran nodos del árbol de forma similar a minimax
+La poda alfa-beta puede producir un resultado diferente que el algoritmo mini-max sin poda respecto a la decisión inicial de max,F,La poda no cambia el resultado solo optimiza
