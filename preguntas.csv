@@ -1,105 +1,115 @@
 pregunta,respuesta,explicacion
-En un juego de suma cero ambos jugadores no pueden perder simultáneamente,T,La suma de utilidades es cero
-En un juego de suma cero ambos jugadores no pueden ganar simultáneamente,T,Uno gana lo que el otro pierde
-En un juego de suma cero es posible que ambos jugadores pierdan,F,La pérdida de uno implica ganancia del otro
-En un juego de suma cero la suma de utilidades puede ser distinta de cero,F,Por definición suma cero
-En un juego determinista el resultado de una acción depende del azar,F,Está completamente definido
-En un juego no determinista el resultado de una acción está completamente definido,F,Interviene el azar
-En un juego de información perfecta puede existir información oculta,F,Se conoce todo el estado
-En un juego de información imperfecta se conoce toda la historia del juego,F,Falta información
-En un juego de dos jugadores siempre hay un ganador,F,Pueden empatar
-En un juego de dos jugadores puede haber empate,T,No siempre hay victoria
-En un árbol de juego la raíz representa un estado terminal,F,Es el estado inicial
-En un árbol de juego una hoja siempre tiene sucesores,F,Las hojas no tienen hijos
-En un árbol de juego una hoja nunca tiene sucesores,T,Definición de hoja
-En un árbol de juego todos los caminos tienen la misma longitud,F,Pueden variar
-En un árbol minimax los nodos alternan entre max y min,T,Turnos alternos
-En un árbol minimax dos nodos consecutivos pueden ser max,F,Siempre alternan
-En minimax max intenta minimizar su utilidad,F,Busca maximizar
-En minimax min intenta maximizar la utilidad de max,F,Busca minimizar
-En minimax max asume que min juega aleatoriamente,F,Asume rival perfecto
-En minimax max asume que min juega de forma óptima,T,Rival racional
-En minimax min asume que max juega de forma subóptima,F,Asume rival óptimo
-En minimax el valor de un nodo max es el mínimo de sus hijos,F,Es el máximo
-En minimax el valor de un nodo min es el máximo de sus hijos,F,Es el mínimo
-En minimax la propagación empieza en la raíz,F,Empieza en hojas
-En minimax la propagación empieza en las hojas,T,Se evalúa de abajo arriba
-En minimax siempre se explora el árbol completo,F,Puede cortarse
-En minimax básico no se realiza poda,T,No hay optimización
-En minimax el orden de exploración no afecta al resultado,T,Resultado es el mismo
-En minimax el orden de exploración puede afectar al resultado,F,Solo afecta al tiempo
-En minimax la complejidad es lineal,F,Es exponencial
-En minimax la complejidad es exponencial,T,Crece muy rápido
-En minimax se puede usar sin función de utilidad,F,Necesaria en hojas
-En minimax la función de utilidad puede aplicarse en nodos no terminales,F,Es para terminales
-En minimax con heurística se pueden evaluar nodos no terminales,T,Se usa estimación
-Una heurística siempre da el valor exacto del estado,F,Es aproximada
-Una heurística intenta aproximar el valor real,T,No es exacta
-Una heurística perfecta elimina la necesidad de explorar el árbol,T,Ya sabes el resultado
-Una heurística mala puede empeorar la decisión,T,Da malas estimaciones
-Una heurística siempre mejora el resultado,F,Puede confundir
-La poda alfa beta cambia el resultado de minimax,F,Solo optimiza
-La poda alfa beta siempre poda al menos un nodo,F,Puede no podar nada
-La poda alfa beta puede no podar ningún nodo,T,Depende del orden
-La poda alfa beta depende del orden de exploración,T,Orden importa
-La poda alfa beta funciona mejor con mal orden de nodos,F,Funciona mejor con buen orden
-La poda alfa beta reduce el número de nodos evaluados,T,Evita ramas inútiles
-La poda alfa beta elimina la necesidad de heurísticas,F,Son cosas distintas
-En alfa beta α representa el peor valor para max,F,Es el mejor encontrado
-En alfa beta β representa el mejor valor para max,F,Es el mejor de min
-En alfa beta α es el mejor valor encontrado para max,T,Valor máximo conocido
-En alfa beta β es el mejor valor encontrado para min,T,Valor mínimo conocido
-En alfa beta se poda cuando α < β,F,Se poda cuando α ≥ β
-En alfa beta se poda cuando α ≥ β,T,Condición de corte
-En alfa beta se actualiza α en nodos min,F,Se actualiza en max
-En alfa beta se actualiza β en nodos max,F,Se actualiza en min
-En alfa beta solo se actualizan valores en hojas,F,También en nodos internos
-En alfa beta se pueden podar ramas completas,T,Se descartan subárboles
-En alfa beta nunca se pierde información relevante,T,No cambia resultado
-En alfa beta se puede perder la solución óptima,F,Siempre la conserva
-En expectiminimax los nodos azar eligen el máximo,F,No maximizan
-En expectiminimax los nodos azar eligen el mínimo,F,No minimizan
-En expectiminimax los nodos azar calculan la media,T,Valor esperado
-En expectiminimax siempre se asume probabilidad uniforme,F,Pueden variar
-En expectiminimax las probabilidades influyen en el resultado,T,Cambian el valor esperado
-En expectiminimax no se utilizan nodos min,F,Sí se usan
-En expectiminimax no se utilizan nodos max,F,Sí se usan
-En expectiminimax solo hay nodos azar,F,Hay tres tipos
-En expectiminimax se combinan max min y azar,T,Se mezclan nodos
-En expectiminimax el valor esperado puede ser decimal,T,Es una media
-En juegos con azar minimax puro es suficiente,F,Falta probabilidad
-En juegos sin azar expectiminimax es obligatorio,F,No hace falta
-En juegos con más de dos jugadores siempre hay suma cero,F,Puede no serlo
-En juegos con más de dos jugadores siempre hay un ganador,F,Pueden empatar
-En juegos con más de dos jugadores cada jugador maximiza su utilidad,T,Cada uno va a lo suyo
-En juegos con más de dos jugadores se usa un único valor,F,Se usa vector
-En juegos con más de dos jugadores se usa un vector de valores,T,Uno por jugador
-En juegos de tres jugadores todos minimizan a uno,F,No hay min global
-En juegos de tres jugadores cada uno actúa de forma independiente,T,Decisión individual
-En juegos de tres jugadores no pueden existir alianzas,F,Pueden surgir
-En juegos de tres jugadores pueden existir alianzas implícitas,T,Cooperación indirecta
-En juegos de tres jugadores el concepto de min desaparece,T,No hay enemigo único
-En juegos de tres jugadores sigue existiendo un nodo min clásico,F,Cambia el modelo
-En un nodo de jugador A se maximiza el valor de B,F,Cada uno maximiza el suyo
-En un nodo de jugador A se maximiza el valor de A,T,Decisión egoísta
-En un vector de utilidades cada componente pertenece a un jugador,T,Un valor por jugador
-En un vector de utilidades todos los jugadores comparten el mismo valor,F,Son distintos
-En un vector de utilidades la suma siempre es cero,F,No necesariamente
-En un nodo de tres jugadores se elige el máximo global,F,Se mira componente propio
-En un nodo de tres jugadores se elige el máximo del jugador actual,T,Criterio individual
-En Connect Four el tablero es de 7 filas y 6 columnas,F,Es 6x7
-En Connect Four el tablero es de 6 filas y 7 columnas,T,Dimensión correcta
-En Connect Four una ficha puede quedarse flotando,F,Cae al fondo
-En Connect Four una ficha cae hasta la posición más baja disponible,T,Regla del juego
-En Connect Four solo se puede ganar en horizontal,F,Hay más formas
-En Connect Four se puede ganar en horizontal vertical y diagonal,T,Tres direcciones
-En Connect Four siempre hay ganador,F,Puede haber empate
-En Connect Four puede haber empate,T,Tablero lleno sin línea
-En Connect Four las casillas vacías se representan con 1,F,Se usa 0
-En Connect Four las casillas vacías se representan con 0,T,Valor neutro
-En Connect Four los jugadores se representan como 1 y -1,T,Convención habitual
-En Connect Four los jugadores se representan como 0 y 1,F,0 es vacío
-En minimax el rival coopera contigo,F,Es adversario
-En minimax el rival intenta perjudicarte,T,Minimiza tu utilidad
-En minimax siempre se elige la primera opción,F,Se elige la mejor
-En minimax se elige la mejor opción según evaluación,T,Criterio de decisión
+En un CSP un estado se define por un conjunto de variables con valores asignados,F,Un estado puede ser parcial o completo
+En un CSP un estado meta es una asignación que cumple todas las restricciones,T,Eso define una solución
+En un CSP las variables pueden tomar valores de un dominio finito,T,Ese es el caso básico
+En un CSP cada variable puede tener un dominio distinto,T,Cada variable tiene su propio dominio
+En un CSP una restricción es un predicado sobre un subconjunto de variables,T,No siempre involucra a todas
+En un CSP todas las restricciones tienen que ser binarias,F,Pueden ser k-arias
+En un CSP binario cada restricción involucra como mucho dos variables,T,Eso lo hace binario
+En un CSP no binario no puede haber restricciones de tipo todos diferentes,F,Sí puede haberlas
+En la representación monolítica se ignora la estructura interna del estado,T,Se trabaja solo con el nombre del estado
+Tomar en cuenta la estructura del estado ayuda a mejorar la mantenibilidad,T,Es una de las motivaciones
+En el problema de las n reinas se busca que ninguna reina amenace a otra,T,Esa es la condición de solución
+En 4 reinas una solución completa puede representarse como una tupla de cuatro valores,T,Cada fila elige una columna
+En el modelo de 4 reinas las filas suelen ser las variables,T,Cada variable representa una fila
+En el modelo de 4 reinas las columnas suelen ser los dominios,T,Cada valor indica una columna
+En Sudoku cada casilla puede modelarse como una variable,T,Hay 81 variables si el tablero está vacío
+En Sudoku el dominio de una casilla vacía suele ser del 1 al 9,T,Ese es el dominio básico
+En Sudoku las casillas iniciales ocupadas tienen un dominio de varios valores,F,Tienen un único valor
+En Sudoku hay 27 restricciones de todos diferentes en el modelo básico,T,Nueve filas nueve columnas y nueve bloques
+En Sudoku la restricción de subcuadrícula también exige que todos los valores sean distintos,T,Ese es el objetivo del bloque 3x3
+En una criptoaritmética pueden aparecer variables auxiliares de acarreo,T,Sirven para modelar la suma
+En una criptoaritmética todas las letras pueden tomar el dígito 0,F,Las primeras letras no suelen poder ser 0
+En una criptoaritmética suele haber una restricción global de todos diferentes,T,Las letras deben representar dígitos distintos
+Un CSP con restricciones k-arias puede representarse como un hipergrafo,T,Cada restricción conecta varios nodos
+En un hipergrafo cada hiperarco puede conectar más de dos variables,T,Eso lo diferencia de un grafo
+Un CSP binario se representa naturalmente como un grafo,T,Cada variable es un nodo
+En un grafo de CSP cada arco representa una restricción binaria,T,Así se codifican las relaciones
+La codificación con variables ocultas permite convertir restricciones de orden superior en binarias,T,Introduce variables auxiliares
+La codificación con variables ocultas no cambia el problema equivalente,T,Produce un CSP equivalente
+Una asignación parcial puede estar definida solo para algunas variables,T,No hace falta asignar todas
+Una asignación completa está definida para todas las variables del CSP,T,Eso la hace total
+Una asignación cumple una restricción si el tupla de valores pertenece a la relación,T,Esa es la definición formal
+Una solución de CSP es cualquier asignación parcial consistente,F,Debe ser completa
+En búsqueda con asignaciones completas el estado es una asignación total,T,Se parte de todas las variables asignadas
+En búsqueda con asignaciones parciales el operador elige un valor para una variable no asignada,T,Se amplía la asignación
+En búsqueda con asignaciones parciales el coste de un camino es relevante,F,El coste suele ser cero
+En un CSP la longitud del camino hasta la solución suele ser irrelevante,T,No importa el número de pasos
+La vuelta atrás cronológica explora en profundidad el espacio de asignaciones parciales,T,Es búsqueda DFS
+La vuelta atrás cronológica necesita explorar primero toda la anchura,F,No es una búsqueda en anchura
+En backtracking la elección de variable no afecta a la completitud,T,Sí puede afectar a la complejidad
+En backtracking la elección de valores tampoco afecta a la complejidad,F,Sí la afecta
+MRV elige la variable con más valores restantes,F,Elige la de menos valores restantes
+La heurística del grado prefiere variables con más restricciones,T,Busca detectar antes los callejones sin salida
+La heurística fail first intenta descubrir el fallo cuanto antes,T,Es la idea de preferir variables difíciles
+La heurística fail last busca generar una solución cuanto antes,T,Se centra en valores prometedores
+El thrashing ocurre cuando se repite el mismo error de asignación,T,Se explora el mismo subárbol varias veces
+El backtracking cronológico evita siempre el thrashing,F,De hecho puede provocarlo
+El backjumping retrocede a la variable que causó el fallo,T,No siempre vuelve a la última
+El backjumping siempre retrocede solo una variable,F,Puede saltarse varias
+Los nogoods guardan asignaciones parciales que ya causaron fallo,T,Sirven para no repetir errores
+Los nogoods eliminan soluciones válidas,F,Solo evitan estados fallidos
+La propagación de restricciones reduce el espacio de búsqueda,T,Elimina valores imposibles
+El forward checking filtra dominios tras ampliar una asignación parcial,T,Actúa después de cada paso
+En forward checking se revisan solo restricciones binarias afectadas por la nueva asignación,T,Se mira lo que toca
+Forward checking puede detectar un fallo si algún dominio se queda vacío,T,Entonces se hace retroceso
+Forward checking usa restricciones entre variables aún no asignadas,F,Solo afecta a variables asignadas y no asignadas
+En 4 reinas si x1 vale 1 se pueden eliminar valores incompatibles de otros dominios,T,Eso es propagación
+La transitividad de restricciones garantiza que forward checking siempre detecte todo fallo,F,Puede no detectar incompatibilidades lejanas
+La consistencia de arco se define respecto a restricciones binarias,T,Es su caso natural
+Una variable es arco consistente si cada valor tiene apoyo en la otra variable,T,Debe existir un valor compatible
+Un CSP es arco consistente si todas sus restricciones lo son,T,Debe cumplirse para todas
+Si una variable no es arco consistente se pueden borrar sus valores incompatibles,T,No cambian las soluciones
+Eliminar valores no arco consistentes no modifica el conjunto de soluciones,T,Solo reduce dominios
+Un CSP arco consistente siempre tiene solución,F,Puede seguir siendo inconsistente
+La arco consistencia también se conoce como 2-consistencia,T,Es el nombre habitual
+La consistencia de arco equivale a 3-consistencia,F,Eso sería otra propiedad
+Un CSP fuerte n-consistente garantiza solución para n variables,T,Es una propiedad más fuerte
+La consistencia de arco puede necesitar reaplicar restricciones varias veces,T,La propagación es iterativa
+Cuando se borra un valor de un dominio puede romperse la consistencia de otra restricción,T,Por eso se repropaga
+El algoritmo de arco consistencia usa una lista de restricciones pendientes,T,La cola o abierta se va actualizando
+Si al aplicar arco consistencia un dominio queda vacío el CSP no tiene solución,T,Se detecta inconsistencia
+La complejidad peor caso de arco consistencia es O(n^2 d^3),T,Esa es la cota indicada
+Arco consistencia siempre detecta cualquier CSP inconsistente,F,No garantiza detectar todos
+MAC significa mantener la consistencia de arcos,T,Maintaining Arc Consistency
+MAC intercala búsqueda con vuelta atrás y propagación de restricciones,T,Combina ambas ideas
+MAC construye un CSP equivalente arco consistente después de cada asignación,T,Ese es su objetivo
+MAC también se conoce como Full Look-Ahead,T,Es un sinónimo habitual
+En MAC la consistencia de arcos se aplica solo al final,F,Se aplica durante la búsqueda
+En MAC tras añadir una asignación se vuelve a propagar,T,La propagación se repite
+La selección de variables afecta a la completitud del backtracking,F,Afecta a la complejidad no a la completitud
+La selección de valores puede cambiar mucho el tamaño del árbol,T,Por eso importan las heurísticas
+En la búsqueda con asignaciones completas el árbol puede tener profundidad máxima n,T,Cada variable se asigna una vez
+En un camino de búsqueda CSP tiene sentido cambiar el valor de una variable varias veces,F,En un camino dado se asigna como mucho una vez
+El número de hojas posibles de un CSP con n variables y dominio d es d^n,T,Eso es el número de asignaciones
+El árbol de búsqueda de asignaciones completas puede tener más hojas que asignaciones distintas,T,Por conmutatividad del orden
+El orden de cambio de variables puede generar caminos equivalentes,T,No cambia la asignación final
+En búsqueda con asignaciones parciales el estado meta sigue siendo una asignación completa,T,Debe satisfacer todas las restricciones
+En búsqueda con asignaciones parciales el espacio se recorta por consistencia,T,Solo se generan sucesores válidos
+La heurística de conflicto mínimo prefiere estados con menos restricciones violadas,T,Es una forma de guía
+En 4 reinas el número de amenazas entre pares puede usarse como heurística,T,Cuantas menos amenazas mejor
+En un CSP la consistencia local siempre implica consistencia global,F,No necesariamente
+La propagación de restricciones puede aplicarse antes de la búsqueda,T,También como preprocesado
+La propagación de restricciones puede aplicarse intercalada con la búsqueda,T,Es el enfoque dinámico
+La consistencia de dominio es más fuerte que la consistencia de arco,T,Exige más eliminación
+La consistencia de arco solo considera valores de apoyo para pares de variables,T,Ese es su alcance
+En un CSP binario una variable puede ser arco consistente con una restricción y no con otra,T,Debe comprobarse en todas
+Las restricciones de Sudoku son todas binarias,F,Las de todos diferentes son n-arias
+En Sudoku vacío todas las casillas tienen inicialmente el dominio completo 1 a 9,T,No hay pistas dadas
+En Sudoku una casilla dada puede verse como dominio unitario,T,Su valor queda fijado
+En el modelo de Sudoku hay 9 restricciones por filas y 9 por columnas,T,Son 18 en total más 9 de bloques
+El modelo básico de Sudoku contiene 27 restricciones de todos diferentes,T,Filas columnas y bloques
+El problema de 4 reinas puede verse como un CSP binario,T,Las amenazas se modelan por pares
+En 4 reinas las restricciones suelen ser locales entre pares de filas,T,Eso simplifica el modelo
+La codificación de variables ocultas introduce una variable por restricción k-aria,T,Representa tuplas válidas
+Una variable oculta suele tener un dominio de tuplas que satisfacen la restricción original,T,Ese es el truco de la conversión
+La conversión a binario mediante variables ocultas mantiene las soluciones del CSP,T,Es una equivalencia
+En un CSP de restricciones binarias cada arco puede aparecer en ambos sentidos,T,Las restricciones dirigidas se manejan así
+La consistencia de arco puede verse como propagación sobre arcos dirigidos,T,Cada dirección se revisa
+La mejor elección de variable en backtracking garantiza siempre la solución inmediata,F,Solo mejora la búsqueda
+En un CSP el coste de una solución suele ser cero porque importa la satisfacción no la longitud,T,No se optimiza camino
+La búsqueda con asignaciones completas puede usar un operador que modifica una variable ya asignada,T,Eso define el espacio de estados
+La vuelta atrás cronológica es completa si el espacio es finito,T,Explora todas las opciones
+La consistencia de arco puede reducir mucho el dominio antes de entrar en backtracking,T,Menos valores implica menos ramas
+Una restricción local entre dos variables puede ser suficiente para descartar una asignación,T,Depende del problema
+La búsqueda con restricciones avanzadas intenta combinar propagación y exploración,T,Esa es la idea central
