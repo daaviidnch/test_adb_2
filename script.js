@@ -5,21 +5,22 @@ let current = 0;
 let score = 0;
 let round = 1;
 
-let stats = {}; // 🔥 tracking de fallos
+let stats = {};
 
 // ---------------- CSV ----------------
 async function loadCSV() {
   const response = await fetch("preguntas.csv");
   const text = await response.text();
 
-  const lines = text.split("\n").slice(1);
+  const lines = text.trim().split("\n").slice(1);
 
   return lines.map(line => {
-    const [pregunta, respuesta, explicacion] = line.split(",");
+    const [pregunta, op1, op2, op3, op4, correcta, explicacion] = line.split(";");
 
     return {
-      text: pregunta,
-      correct: respuesta.trim() === "T",
+      text: pregunta.trim(),
+      options: [op1, op2, op3, op4].map(x => x.trim()),
+      correct: parseInt(correcta.trim(), 10),
       explanation: explicacion ? explicacion.trim() : ""
     };
   });
@@ -46,15 +47,23 @@ function loadQuestion() {
 
   document.getElementById("question").innerText = q.text;
 
+  const container = document.getElementById("optionsContainer");
+  container.innerHTML = "";
+
+  const letters = ["A", "B", "C", "D"];
+
+  q.options.forEach((option, index) => {
+    const btn = document.createElement("button");
+    btn.className = "btn";
+    btn.innerText = `${letters[index]}) ${option}`;
+    btn.onclick = () => answer(index);
+    container.appendChild(btn);
+  });
+
   const result = document.getElementById("result");
   result.innerText = "";
   result.className = "feedback";
 
-  // activar botones
-  document.getElementById("trueBtn").disabled = false;
-  document.getElementById("falseBtn").disabled = false;
-
-  // desactivar siguiente
   document.getElementById("nextBtn").disabled = true;
 
   updateUI();
@@ -65,39 +74,31 @@ function answer(userAnswer) {
   const q = questions[current];
   const result = document.getElementById("result");
 
-  // bloquear botones
-  document.getElementById("trueBtn").disabled = true;
-  document.getElementById("falseBtn").disabled = true;
+  const buttons = document.querySelectorAll("#optionsContainer button");
+  buttons.forEach(btn => btn.disabled = true);
 
   const key = q.text;
 
-  // inicializar stats si no existe
   if (!stats[key]) {
     stats[key] = { fails: 0 };
   }
 
-  // puntos decrecientes
-  let points = 10 / Math.pow(2, stats[key].fails);
-
   if (userAnswer === q.correct) {
-    score += points;
+    score += 1;
 
-    result.innerText =
-      `✅ Correcto (+${points.toFixed(1)} pts)\n` + q.explanation;
+    result.innerText = `✅ Correcto (+1)\n${q.explanation}`;
     result.className = "feedback correct";
   } else {
-    stats[key].fails++; // 🔥 aumenta fallos
+    score -= 0.25;
+    stats[key].fails++;
     wrongQuestions.push(q);
 
     result.innerText =
-      `❌ Incorrecto (era ${q.correct ? "Verdadero" : "Falso"})\n` +
-      q.explanation;
+      `❌ Incorrecto (correcta: ${q.options[q.correct]})\n${q.explanation}`;
     result.className = "feedback incorrect";
   }
 
-  // activar botón siguiente
   document.getElementById("nextBtn").disabled = false;
-
   updateUI();
 }
 
@@ -127,8 +128,7 @@ function nextRound() {
   shuffle(questions);
 
   const result = document.getElementById("result");
-  result.innerText =
-    `⚠️ Nueva ronda con ${questions.length} preguntas falladas`;
+  result.innerText = `⚠️ Nueva ronda con ${questions.length} preguntas falladas`;
   result.className = "feedback";
 
   setTimeout(loadQuestion, 1000);
@@ -140,14 +140,14 @@ function endTest() {
     "🔥 Dominado. No has fallado ninguna en la última ronda.";
 
   document.getElementById("result").innerText =
-    "Puntuación total: " + Math.floor(score);
+    "Puntuación total: " + score.toFixed(2);
 
   document.getElementById("nextBtn").disabled = true;
 }
 
 // ---------------- UI ----------------
 function updateUI() {
-  document.getElementById("score").innerText = Math.floor(score);
+  document.getElementById("score").innerText = score.toFixed(2);
   document.getElementById("roundText").innerText = round;
 
   document.getElementById("progressText").innerText =
