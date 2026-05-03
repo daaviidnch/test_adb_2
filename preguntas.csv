@@ -1,49 +1,51 @@
 pregunta;op1;op2;op3;op4;correcta;explicacion
-¿Qué hace la función logística sobre la salida de un modelo lineal?;La convierte en una probabilidad;La convierte en una clase;La reduce a dos dimensiones;La hace uniforme;0;La sigmoide transforma la salida en un valor entre 0 y 1
-¿Qué valor toma la sigmoide en la frontera de decisión?;1;0;0.25;0.5;3;Si g(x)=0 entonces σ(0)=0.5
-¿Qué representa la frontera de decisión de un clasificador lineal?;Donde el modelo predice siempre clase positiva;Donde g(x)=0;Donde la pérdida es mínima;Donde el gradiente es nulo;1;La frontera separa las regiones de decisión
-¿Cuál es la forma general de un modelo lineal?;w·x+b;w/x+b;x²+w;b−x;0;Es una combinación lineal más término independiente
-¿Qué hace la función signo?;Devuelve una probabilidad;Devuelve una etiqueta;Escala los datos;Elimina variables;1;Convierte la salida en +1 o -1
-¿Qué mide el recall?;De los positivos predichos cuántos son correctos;De los positivos reales cuántos detectas;De los negativos cuántos ignoras;El porcentaje total de aciertos;1;Recall = TP/(TP+FN)
-¿Qué mide la precision?;De los positivos predichos cuántos son correctos;De los positivos reales cuántos detectas;De los errores cuántos son FP;La separación entre clases;0;Precision = TP/(TP+FP)
-Si recall = 100 %, ¿qué ocurre?;FP = 0;TN = 0;FN = 0;TP = 0;2;No se pierde ningún positivo real
-¿Cuál de estas afirmaciones sobre accuracy es correcta?;Siempre es la mejor métrica;Es útil incluso con clases desbalanceadas;Puede engañar si hay desbalance;Solo sirve en regresión;2;Puede dar una impresión falsa si una clase domina
-¿Qué hace LASSO?;Añade una penalización con valores absolutos;Añade una penalización con cuadrados;Elimina datos perdidos;Convierte variables en binarias;0;LASSO usa norma L1 y puede llevar pesos a cero
-¿Qué hace RIDGE?;Elimina variables directamente;Añade una penalización con cuadrados;Clasifica datos;Reduce el número de ejemplos;1;RIDGE usa norma L2
-¿Cuál es el efecto típico de LASSO?;Aumenta la varianza;Puede dejar coeficientes exactamente en cero;Hace el modelo no lineal;Obliga a usar PCA;1;Puede seleccionar variables
-¿Cuál es el efecto típico de RIDGE?;Hace coeficientes grandes;Hace coeficientes pequeños;Elimina todas las variables;Convierte el modelo en árbol;1;Reduce magnitudes pero no suele anular coeficientes
-¿Qué hace el descenso de gradiente?;Maximiza la pérdida;Minimiza la pérdida;Maximiza la varianza;Reduce la dimensionalidad;1;Actualiza parámetros para bajar el error
-¿Cuál es la regla correcta de actualización?;w = w + η∇J;w = w − η∇J;w = η + ∇J;w = ∇J − η;1;Se resta el gradiente para minimizar
-¿Qué pasa si el learning rate es demasiado alto?;Converge más rápido siempre;Puede oscilar o divergir;No cambia nada;Hace exacta la solución;1;Puede saltarse el mínimo
-¿Qué representa el gradiente de una función?;La dirección de máximo descenso;La dirección de máximo crecimiento;El punto mínimo;La media de la función;1;Apunta hacia donde más crece
-¿Por qué el negativo del gradiente se usa en entrenamiento?;Porque apunta al máximo;Porque apunta al mínimo;Porque elimina ruido;Porque normaliza;1;Queremos reducir la función de pérdida
-¿Qué relación tiene el gradiente con las curvas de nivel?;Es paralelo a ellas;Es perpendicular a ellas;No tiene relación;Siempre las corta en diagonal fija;1;El gradiente es ortogonal a curvas de nivel
-¿Qué hace MinMaxScaler?;Centra los datos en media 0;Escala a [0,1];Hace distribución normal;Elimina outliers;1;Reescala al rango deseado
-¿Qué hace la estandarización?;Media 0 y desviación 1;Rango [0,1];Distribución uniforme;Media 1 y desviación 0;0;Z = (x−μ)/σ
-¿La estandarización convierte los datos en una normal N(0,1)?;Sí siempre;No, solo cambia media y varianza;Sí si hay pocos datos;No, los deja igual;1;No fuerza normalidad
-¿Qué hace PCA?;Selecciona las variables originales más importantes;Crea nuevas variables que capturan varianza;Clasifica datos;Calcula el gradiente;1;PCA proyecta en nuevas direcciones
-¿Qué obtiene PCA como base de transformación?;Vectores aleatorios;Autovectores;Gradientes;Etiquetas;1;Los componentes principales son autovectores de la matriz de covarianza
-¿Por qué PCA reduce dimensionalidad?;Porque borra datos al azar;Porque conserva solo los componentes principales;Porque normaliza;Porque clasifica;1;Se queda con menos direcciones de variación
-¿Cuándo se debe hacer el split train/test?;Después de imputar y escalar todo;Antes de transformar los datos;Da igual;Solo al final del pipeline;1;Evita fuga de información
-¿Qué problema hay si transformas antes del split?;Underfitting;Data leakage;Overfitting imposible;Bias de clase;1;El test influye en el entrenamiento
-¿Qué hace el filtrado por varianza?;Elimina variables con varianza baja;Elimina variables correlacionadas siempre;Convierte variables en categorías;Calcula accuracy;0;Sirve para quitar variables casi constantes
-¿El filtrado por varianza depende de la escala?;No;Sí;Solo en test;Solo si hay missing;1;La varianza cambia con la escala
-¿Qué ocurre tras estandarizar si aplicas filtrado por varianza?;Siempre elimina todo;No elimina casi nada por varianza;Convierte en PCA;Aumenta la varianza;1;Muchas variables quedan con varianza parecida
-¿Qué hace el one-hot encoding?;Convierte una variable categórica en varias binarias;Convierte una continua en binaria;Reduce siempre la dimensión;Elimina la correlación;0;Representa categorías con 0 y 1
-¿Qué métrica usa TP y FP?;Recall;Precision;MSE;Accuracy;1;Precision depende de positivos predichos
-¿Qué métrica usa TP y FN?;Recall;Precision;MAE;LASSO;0;Recall depende de positivos reales
-¿Cuál de estas fórmulas es MAE?;1/N Σ(y−ŷ)²;1/N Σ|y−ŷ|;Σ y log(ŷ);1/N Σ(y+ŷ);1;MAE usa error absoluto medio
-¿Cuál de estas fórmulas es MSE?;1/N Σ|y−ŷ|;1/N Σ(y−ŷ)²;Σ|y|;1/N Σ(y/ŷ);1;MSE usa error cuadrático medio
-¿Qué mide una función de pérdida?;La calidad del modelo sobre un conjunto;La probabilidad de clase;El tamaño de la muestra;La varianza de una variable;0;Cuantifica el error del modelo
-¿Qué representa una matriz de confusión?;Los coeficientes del modelo;Los errores y aciertos de clasificación;El espacio latente;La varianza acumulada;1;Resume TP, FP, TN y FN
-¿Qué significa overfitting?;El modelo es demasiado simple;El modelo memoriza entrenamiento y generaliza mal;El modelo no tiene parámetros;El modelo usa PCA;1;Aprende demasiado el train
-¿Qué significa underfitting?;El modelo memoriza todo;El modelo no aprende suficiente;El modelo tiene demasiadas variables;El modelo usa regularización;1;No captura bien el patrón
-¿Puede un modelo lineal tener frontera no lineal?;Sí siempre;No, por definición;Sí si usa bias;Sí si usa loss;1;La frontera de un modelo lineal es un hiperplano
-¿Qué ocurre si g(x) > 0 usando función signo?;Clase negativa;Clase positiva;Probabilidad 0.5;Error 0;1;La decisión es positiva
-¿Qué ocurre si g(x) < 0 usando función signo?;Clase negativa;Clase positiva;Probabilidad 1;PCA;0;La decisión es negativa
-¿Qué hace la regresión logística respecto al modelo lineal?;Lo convierte en una probabilidad;Lo convierte en una variable binaria sin umbral;Lo convierte en PCA;Lo elimina;0;Aplica sigmoide a la salida lineal
-¿Se puede conseguir 100 % de accuracy cambiando el umbral siempre?;Sí siempre;No nunca;Solo si los datos son linealmente separables;Solo si hay PCA;2;El umbral no arregla datos inseparables
-Si dos clases están mezcladas de forma no separable, ¿qué pasa?;Se puede separar con cualquier umbral;No se puede lograr separación perfecta con un modelo lineal;PCA lo arregla siempre;LASSO lo soluciona;1;La separabilidad manda
-¿Qué hace la regularización en general?;Aumenta complejidad;Reduce overfitting;Aumenta la varianza;Hace los datos binarios;1;Penaliza modelos demasiado complejos
-¿Cuál es la interpretación correcta de un modelo lineal?;Salida no lineal de dos capas;Combinación lineal de características más bias;Árbol de decisión;Reducción de dimensión;1;Es la definición básica
-¿Qué componente no puede faltar en un modelo lineal clásico?;Término independiente;Umbral fijo 0.25;PCA;One-hot;0;El bias forma parte del modelo
+"¿Cuál de las siguientes opciones es la única verdadera?";"La función signo convierte probabilidades en etiquetas continuas";"La función signo asigna +1 si f(x)>=0 y -1 si f(x)<0";"La función signo solo sirve en regresión";"La función signo siempre devuelve 0";"b";"Clasifica binariamente según el signo del score."
+"¿Cuál de las siguientes opciones es la única verdadera?";"LASSO usa penalización L2";"RIDGE usa penalización L1";"LASSO usa penalización L1";"Ninguna regularización modifica la pérdida";"c";"LASSO es norma L1 (valores absolutos)."
+"¿Cuál de las siguientes opciones es la única verdadera?";"RIDGE lleva coeficientes exactamente a cero";"RIDGE usa penalización L2";"RIDGE elimina variables siempre";"RIDGE solo sirve en clasificación";"b";"RIDGE penaliza con suma de cuadrados."
+"¿Cuál de las siguientes opciones es la única verdadera?";"MinMaxScaler centra en media 0 varianza 1";"MinMaxScaler reescala a [0,1] por feature";"MinMaxScaler normaliza a Gaussiana";"MinMaxScaler elimina outliers";"b";"Reescala linealmente cada variable a un rango."
+"¿Cuál de las siguientes opciones es la única verdadera?";"StandardScaler lleva a media 0 y varianza 1";"StandardScaler lleva a [0,1]";"StandardScaler binariza";"StandardScaler ordena";"a";"Estandariza: (x-μ)/σ."
+"¿Cuál de las siguientes opciones es la única verdadera?";"PCA selecciona features originales";"PCA crea variables ortogonales maximizando varianza";"PCA requiere etiquetas";"PCA elimina toda varianza";"b";"Componentes principales ortogonales."
+"¿Cuál de las siguientes opciones es la única verdadera?";"MAE es media del error cuadrático";"MAE es media del error absoluto";"MAE es número de aciertos";"MAE es mediana del error";"b";"Definición de MAE."
+"¿Cuál de las siguientes opciones es la única verdadera?";"MSE es media del error absoluto";"MSE es media del error al cuadrado";"MSE es suma sin media";"MSE siempre 0";"b";"Definición de MSE."
+"¿Cuál de las siguientes opciones es la única verdadera?";"La logística convierte score en probabilidad";"La logística da etiqueta sin umbral";"La logística elimina entrenamiento";"La logística da valores negativos";"a";"Sigmoide mapea a [0,1]."
+"¿Cuál de las siguientes opciones es la única verdadera?";"GD suma gradiente";"GD resta gradiente";"GD no actualiza pesos";"GD elimina sesgo";"b";"Se resta porque el gradiente apunta a subida."
+"¿Cuál de las siguientes opciones es la única verdadera?";"El gradiente apunta a descenso";"El gradiente apunta a aumento";"El gradiente siempre 0";"El gradiente no existe";"b";"Dirección de máximo incremento."
+"¿Cuál de las siguientes opciones es la única verdadera?";"La matriz de confusión es para regresión";"Resume TP,FP,FN,TN";"Contiene probabilidades";"Es un escalador";"b";"Tabla de aciertos/errores."
+"¿Cuál de las siguientes opciones es la única verdadera?";"FP: predices negativo y era positivo";"FP: predices positivo y era negativo";"FP: predices positivo y era positivo";"FP: predices negativo y era negativo";"b";"Definición FP."
+"¿Cuál de las siguientes opciones es la única verdadera?";"FN: predices positivo y era negativo";"FN: predices negativo y era positivo";"FN: predices positivo y era positivo";"FN: predices negativo y era negativo";"b";"Definición FN."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Precision=TP/(TP+FN)";"Precision=TP/(TP+FP)";"Precision=TN/(TN+FP)";"Precision=TP/(TP+TN)";"b";"Positivos predichos correctos."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Recall=TP/(TP+FP)";"Recall=TP/(TP+FN)";"Recall=TN/(TN+FP)";"Recall=FP/(FP+FN)";"b";"Positivos reales recuperados."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Accuracy=TP/total";"Accuracy=(TP+TN)/total";"Accuracy=FP/total";"Accuracy=FN/total";"b";"Proporción de aciertos."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Subir umbral aumenta positivos";"Subir umbral reduce positivos";"Subir umbral siempre mejora recall";"Subir umbral siempre mejora accuracy";"b";"Más estricto → menos positivos."
+"¿Cuál de las siguientes opciones es la única verdadera?";"LASSO nunca anula coeficientes";"LASSO puede hacer coeficientes 0";"LASSO obliga igualdad";"LASSO no cambia nada";"b";"Sparsity en LASSO."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Ajustar scaler antes del split";"Split y luego ajustar scaler con train";"Orden da igual";"Solo escalar test";"b";"Evitar data leakage."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Componentes PCA son ortogonales";"Son paralelos";"Usan etiquetas";"Eliminan varianza";"a";"Base ortogonal."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Estandarizar hace normalidad";"Estandarizar no garantiza normalidad";"Estandarizar binariza";"Estandarizar ordena";"b";"Solo centra y escala."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Modelo lineal debe ser lineal en x";"Nunca tiene sesgo";"No sirve en clasificación";"Siempre no lineal";"a";"Lineal en parámetros y features."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Frontera lineal es curva";"Frontera es hiperplano";"Frontera es árbol";"Frontera es nube";"b";"Separador lineal."
+"¿Cuál de las siguientes opciones es la única verdadera?";"One-hot sirve para variables continuas";"One-hot codifica categóricas";"One-hot reduce dimensión";"One-hot normaliza";"b";"Categóricas a binarias."
+"¿Cuál de las siguientes opciones es la única verdadera?";"MinMax cambia distribución";"MinMax no cambia forma relativa";"MinMax hace normalidad";"MinMax elimina correlación";"b";"Escala, no deforma."
+"¿Cuál de las siguientes opciones es la única verdadera?";"StandardScaler depende del mínimo";"StandardScaler usa media y desviación";"StandardScaler usa percentiles";"StandardScaler elimina outliers";"b";"Basado en μ y σ."
+"¿Cuál de las siguientes opciones es la única verdadera?";"PCA maximiza correlación";"PCA maximiza varianza explicada";"PCA minimiza muestras";"PCA usa etiquetas";"b";"Criterio de varianza."
+"¿Cuál de las siguientes opciones es la única verdadera?";"El primer PC explica menos varianza";"El primer PC explica más varianza";"Todos explican igual";"No hay orden";"b";"Orden decreciente de varianza."
+"¿Cuál de las siguientes opciones es la única verdadera?";"AUROC usa accuracy vs umbral";"AUROC usa TPR vs FPR";"AUROC usa MAE";"AUROC usa MSE";"b";"Curva ROC: TPR vs FPR."
+"¿Cuál de las siguientes opciones es la única verdadera?";"TPR=FP/(FP+TN)";"TPR=TP/(TP+FN)";"TPR=TN/(TN+FP)";"TPR=TP/(TP+FP)";"b";"TPR es recall."
+"¿Cuál de las siguientes opciones es la única verdadera?";"FPR=FP/(FP+TN)";"FPR=TP/(TP+FN)";"FPR=TN/(TN+FP)";"FPR=FN/(FN+TP)";"a";"Falsos positivos sobre negativos reales."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Aumentar FP sube precision";"Aumentar FP baja precision";"FP no afecta precision";"FP aumenta recall";"b";"Más FP empeora precision."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Aumentar FN sube recall";"Aumentar FN baja recall";"FN no afecta recall";"FN mejora precision";"b";"Más FN → peor recall."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Imputar antes de split es correcto";"Imputar después de split con train es correcto";"Orden da igual";"Nunca imputar";"b";"Evitar fuga."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Variables con distinta escala no afectan PCA";"Escala afecta PCA";"PCA ignora escala";"PCA elimina escala";"b";"Covarianza depende de escala."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Varianza es independiente de escala";"Varianza depende de escala";"Varianza siempre 1";"Varianza no importa";"b";"Multiplicar cambia varianza."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Filtrado por varianza ignora escala";"Filtrado por varianza depende de escala";"Siempre elimina todo";"Nunca elimina nada";"b";"Umbral relativo a escala."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Regresión logística usa MSE siempre";"Regresión logística usa función logística";"Regresión logística es clustering";"Regresión logística elimina umbral";"b";"Modelo probabilístico."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Umbral no afecta predicción";"Umbral afecta clasificación";"Umbral solo en regresión";"Umbral fija pesos";"b";"Define decisión binaria."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Separabilidad lineal garantiza 100% accuracy";"Nunca se logra 100% accuracy";"Accuracy no depende de datos";"Separabilidad no importa";"a";"Si separable, existe hiperplano perfecto."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Regularización aumenta overfitting";"Regularización reduce overfitting";"Regularización elimina datos";"Regularización aumenta varianza";"b";"Controla complejidad."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Bias alto = underfitting";"Bias alto = overfitting";"Bias no importa";"Bias es ruido";"a";"Error sistemático alto."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Varianza alta = underfitting";"Varianza alta = overfitting";"Varianza no importa";"Varianza es media";"b";"Sensibilidad al ruido."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Más datos aumenta overfitting";"Más datos reduce varianza";"Más datos elimina bias";"Más datos no afecta";"b";"Más muestras estabilizan."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Cross-validation usa solo test";"Cross-validation rota folds de entrenamiento/validación";"Cross-validation elimina datos";"Cross-validation es escalado";"b";"Evaluación robusta."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Overfitting = bajo error train y alto test";"Overfitting = alto error train";"Overfitting = error igual";"Overfitting no existe";"a";"Mala generalización."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Underfitting = modelo complejo";"Underfitting = modelo demasiado simple";"Underfitting = mucho dato";"Underfitting = overfitting";"b";"No captura patrón."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Feature engineering siempre reduce dimensión";"Feature engineering puede aumentar dimensión";"Feature engineering elimina datos";"Feature engineering solo normaliza";"b";"Puede crear nuevas variables."
+"¿Cuál de las siguientes opciones es la única verdadera?";"Escalar después del split evita leakage";"Escalar antes del split evita leakage";"Orden irrelevante";"Nunca escalar";"a";"Fit solo con train."
