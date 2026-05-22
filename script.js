@@ -6,20 +6,20 @@ let score = 0;
 let round = 1;
 
 let stats = {};
+const answerLabels = ["Verdadero", "Falso"];
 
 // ---------------- CSV ----------------
 async function loadCSV() {
   const response = await fetch("preguntas.csv");
   const text = await response.text();
 
-  const lines = text.trim().split("\n").slice(1);
+  const lines = text.trim().split(/\r?\n/).slice(1);
 
   return lines.map(line => {
-    const [pregunta, op1, op2, op3, op4, correcta, explicacion] = line.split(";");
+    const [pregunta, correcta, explicacion = ""] = line.split(";");
 
     return {
       text: pregunta.trim(),
-      options: [op1, op2, op3, op4].map(x => x.trim()),
       correct: parseInt(correcta.trim(), 10),
       explanation: explicacion ? explicacion.trim() : ""
     };
@@ -50,12 +50,10 @@ function loadQuestion() {
   const container = document.getElementById("optionsContainer");
   container.innerHTML = "";
 
-  const letters = ["A", "B", "C", "D"];
-
-  q.options.forEach((option, index) => {
+  answerLabels.forEach((label, index) => {
     const btn = document.createElement("button");
-    btn.className = "btn";
-    btn.innerText = `${letters[index]}) ${option}`;
+    btn.className = `btn ${index === 0 ? "btn--true" : "btn--false"}`;
+    btn.innerText = label;
     btn.onclick = () => answer(index);
     container.appendChild(btn);
   });
@@ -94,9 +92,17 @@ function answer(userAnswer) {
     wrongQuestions.push(q);
 
     result.innerText =
-      `❌ Incorrecto (correcta: ${q.options[q.correct]})\n${q.explanation}`;
+      `❌ Incorrecto (correcta: ${answerLabels[q.correct]})\n${q.explanation}`;
     result.className = "feedback incorrect";
   }
+
+  buttons.forEach((btn, index) => {
+    if (index === q.correct) {
+      btn.classList.add("correct");
+    } else if (index === userAnswer) {
+      btn.classList.add("incorrect");
+    }
+  });
 
   document.getElementById("nextBtn").disabled = false;
   updateUI();
@@ -137,7 +143,7 @@ function nextRound() {
 // ---------------- END ----------------
 function endTest() {
   document.getElementById("question").innerText =
-    "🔥 Dominado. No has fallado ninguna en la última ronda.";
+    "Banco completado. Revisa las falladas para reforzar el temario.";
 
   document.getElementById("result").innerText =
     "Puntuación total: " + score.toFixed(2);

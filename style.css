@@ -196,15 +196,6 @@ body {
   box-shadow: none;
 }
 
-.btn--true {
-  background: linear-gradient(135deg, #16a34a, #22c55e);
-}
-
-.btn--false {
-  background: linear-gradient(135deg, #dc2626, #ef4444);
-}
-/* ===== FIX BOTONES OPCIONES ===== */
-
 .actions .btn {
   background: rgba(255, 255, 255, 0.06);
   color: var(--text);
@@ -213,7 +204,7 @@ body {
 
 /* Hover mejorado */
 .actions .btn:hover {
-  background: rgba(255, 255, 255, 0.12);
+  filter: brightness(1.08);
 }
 
 /* Botón correcto */
@@ -224,6 +215,16 @@ body {
 
 /* Botón incorrecto */
 .actions .btn.incorrect {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: white;
+}
+
+.actions .btn.btn--true {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  color: white;
+}
+
+.actions .btn.btn--false {
   background: linear-gradient(135deg, #dc2626, #ef4444);
   color: white;
 }
@@ -318,29 +319,7 @@ body {
     min-height: 180px;
     padding: 10px 0 18px;
   }
-  /* ===== FIX BOTONES OPCIONES ===== */
-
-.actions .btn {
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--text);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-/* Hover mejorado */
-.actions .btn:hover {
-  background: rgba(255, 255, 255, 0.12);
-}
-
-/* Botón correcto */
-.actions .btn.correct {
-  background: linear-gradient(135deg, #16a34a, #22c55e);
-  color: white;
-}
-
-/* Botón incorrecto */
-.actions .btn.incorrect {
-  background: linear-gradient(135deg, #dc2626, #ef4444);
-  color: white;
-}
-  
+  .actions .btn:hover {
+    filter: brightness(1.08);
+  }
 }

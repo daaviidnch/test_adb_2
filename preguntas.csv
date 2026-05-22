@@ -1,61 +1,81 @@
-pregunta;op1;op2;op3;op4;correcta;explicacion
-"¿Cuál de las siguientes opciones es la única verdadera?";"En una SVM lineal la superficie de decisión se define por wTx+b=1";"En una SVM lineal la clase predicha depende del signo de wTx+b";"En una SVM lineal el vector w es paralelo a la superficie de decisión";"En una SVM lineal b no afecta a la posición del hiperplano";1;"La regla de decisión usa el signo de la función discriminante."
-"¿Cuál de las siguientes opciones es la única verdadera?";"El margen aumenta cuando aumenta la norma de w";"Los vectores soporte son siempre todos los ejemplos";"Maximizar el margen equivale a minimizar la norma de w bajo restricciones adecuadas";"El margen solo existe en problemas no lineales";2;"El margen es inversamente proporcional a la norma de w."
-"¿Cuál de las siguientes opciones es la única verdadera?";"El margen rígido permite errores con variables de holgura";"El parámetro C controla el margen rígido";"El margen rígido ignora las restricciones";"El margen rígido asume datos linealmente separables";3;"La SVM de margen rígido no admite violaciones de las restricciones."
-"¿Cuál de las siguientes opciones es la única verdadera?";"Las variables de holgura permiten formular una SVM de margen laxo";"Las variables de holgura convierten SVM en clustering";"Las variables de holgura eliminan la pérdida";"Las variables de holgura colocan todos los ejemplos sobre el margen";0;"Las holguras permiten tolerar errores o violaciones del margen."
-"¿Cuál de las siguientes opciones es la única verdadera?";"Un C grande hace que los errores no tengan coste";"Un C grande elimina los vectores soporte";"Un C grande penaliza más las violaciones del margen";"Un C grande obliga a usar kernel RBF";2;"C pondera el coste de las violaciones frente al tamaño del margen."
-"¿Cuál de las siguientes opciones es la única verdadera?";"La pérdida hinge es positiva para ejemplos bien clasificados fuera del margen";"La pérdida hinge puede escribirse como max(0, 1-yf(x))";"La pérdida hinge es idéntica al error 0-1";"La pérdida hinge solo sirve para regresión";1;"La hinge loss penaliza cuando yf(x) es menor que 1."
-"¿Cuál de las siguientes opciones es la única verdadera?";"La formulación dual elimina todas las restricciones";"La formulación dual impide aplicar kernels";"La formulación dual solo sirve con una característica";"En la formulación dual aparecen productos escalares entre ejemplos";3;"El dual permite sustituir productos escalares por kernels."
-"¿Cuál de las siguientes opciones es la única verdadera?";"El truco del kernel calcula productos escalares en un espacio transformado sin construirlo explícitamente";"El truco del kernel normaliza etiquetas";"El truco del kernel separa siempre cualquier problema";"El truco del kernel solo se usa en árboles";0;"El kernel evita calcular de forma explícita la transformación de características."
-"¿Cuál de las siguientes opciones es la única verdadera?";"Un kernel lineal genera fronteras circulares";"Un kernel RBF solo sirve para variables categóricas";"Un kernel polinómico introduce interacciones no lineales";"Cualquier función arbitraria es un kernel válido";2;"El kernel polinómico permite trabajar con combinaciones no lineales."
-"¿Cuál de las siguientes opciones es la única verdadera?";"Todos los ejemplos tienen el mismo multiplicador de Lagrange";"Los ejemplos con multiplicador distinto de cero son relevantes para la frontera";"Los multiplicadores son probabilidades a priori";"Los multiplicadores sustituyen las etiquetas";1;"Los ejemplos con alfa no nula actúan como vectores soporte."
-"¿Cuál de las siguientes opciones es la única verdadera?";"La entropía de una tabla con una sola clase es máxima";"La entropía no depende de las proporciones";"La entropía solo se define para variables continuas";"La entropía mide impureza o incertidumbre de clases";3;"La entropía crece cuando aumenta la mezcla de clases."
-"¿Cuál de las siguientes opciones es la única verdadera?";"Un nodo binario con 50 por ciento de cada clase tiene entropía 1 bit";"Un nodo binario con 50 por ciento de cada clase tiene entropía 0";"Un nodo binario equilibrado tiene Gini igual a 1";"Con clases equilibradas no se puede calcular ganancia";0;"Con dos clases equiprobables la incertidumbre es máxima y vale 1 bit."
-"¿Cuál de las siguientes opciones es la única verdadera?";"La ganancia de información es siempre negativa";"La ganancia de información mide la reducción de entropía tras dividir un nodo";"La ganancia no usa los subconjuntos resultantes";"La ganancia de información solo se aplica a SVM";1;"Compara la impureza antes y después de la partición."
-"¿Cuál de las siguientes opciones es la única verdadera?";"Un árbol exige variables gaussianas";"Un árbol predice usando distancia al centroide";"Un árbol elige divisiones que reducen la impureza";"Un árbol no representa reglas si entonces";2;"Los criterios como entropía o Gini buscan nodos más puros."
-"¿Cuál de las siguientes opciones es la única verdadera?";"Gini vale 1 en un nodo puro";"Gini solo se usa en clustering jerárquico";"Gini no depende de probabilidades de clase";"Gini vale 0 cuando todas las muestras son de una clase";3;"Un nodo puro no tiene mezcla de clases y su impureza es cero."
-"¿Cuál de las siguientes opciones es la única verdadera?";"Una hoja de árbol suele asociarse a una predicción de clase";"Una hoja siempre contiene exactamente un ejemplo";"La raíz no participa en la clasificación";"Los nodos internos no contienen condiciones";0;"La predicción se obtiene al llegar a una hoja."
-"¿Cuál de las siguientes opciones es la única verdadera?";"La clasificación probabilística solo devuelve distancias";"La clasificación probabilística estima probabilidades de clase condicionadas a características";"Las clases no pueden tener probabilidades a priori";"No se puede usar máximo a posteriori";1;"El objetivo habitual es estimar P(y dado x)."
-"¿Cuál de las siguientes opciones es la única verdadera?";"Log loss vale siempre 0";"Log loss es independiente de la clase real";"Log loss penaliza mucho predicciones confiadas e incorrectas";"Log loss solo se usa en clustering";2;"Una probabilidad alta asignada a la clase errónea produce gran pérdida."
-"¿Cuál de las siguientes opciones es la única verdadera?";"La entropía cruzada binaria solo acepta etiquetas continuas";"La entropía cruzada maximiza errores";"La entropía cruzada es distancia Manhattan";"La entropía cruzada binaria es la pérdida habitual de regresión logística binaria";3;"La log loss binaria coincide con la entropía cruzada binaria."
-"¿Cuál de las siguientes opciones es la única verdadera?";"La sigmoide transforma una puntuación real en probabilidad entre 0 y 1";"La sigmoide devuelve siempre valores mayores que 1";"La sigmoide solo se usa en clustering";"La sigmoide elimina la necesidad de etiquetas";0;"La sigmoide permite interpretar el score como probabilidad."
-"¿Cuál de las siguientes opciones es la única verdadera?";"Bayes elimina la necesidad de verosimilitud";"Bayes relaciona posteriori, verosimilitud, priori y evidencia";"Bayes solo sirve para variables binarias";"Bayes afirma que P(A dado B) siempre es P(B dado A)";1;"El teorema de Bayes descompone la posteriori en esos términos."
-"¿Cuál de las siguientes opciones es la única verdadera?";"La evidencia decide siempre porque depende de la clase";"La verosimilitud nunca influye";"La clase puede elegirse maximizando la probabilidad a posteriori";"Las probabilidades a priori deben ser iguales";2;"La regla MAP elige la clase con posteriori máxima."
-"¿Cuál de las siguientes opciones es la única verdadera?";"La priori de una clase siempre es 0.5";"La priori depende de las características de cada ejemplo";"La priori es la distancia al hiperplano";"La priori puede estimarse con la frecuencia de la clase en entrenamiento";3;"La frecuencia relativa es un estimador habitual de la priori."
-"¿Cuál de las siguientes opciones es la única verdadera?";"La verosimilitud P(x dado y) modela lo probable que es observar x si la clase es y";"La verosimilitud siempre es igual a la posteriori";"La verosimilitud solo existe para SVM";"La verosimilitud no puede aprenderse de datos";0;"La verosimilitud describe el modelo de los datos condicionado a la clase."
-"¿Cuál de las siguientes opciones es la única verdadera?";"Naive Bayes exige clases con el mismo número de ejemplos";"Naive Bayes no usa Bayes";"Naive Bayes asume independencia condicional de características dada la clase";"Naive Bayes aprende siempre margen máximo";2;"La hipótesis naive factoriza la verosimilitud por características."
-"¿Cuál de las siguientes opciones es la única verdadera?";"iid significa que las características de un ejemplo son dependientes";"iid significa ejemplos independientes e idénticamente distribuidos";"iid elimina la necesidad de etiquetas";"iid solo se usa en dendrogramas";1;"La hipótesis iid se refiere a la generación de los ejemplos."
-"¿Cuál de las siguientes opciones es la única verdadera?";"Bernoulli NB exige características normales";"Bernoulli NB solo se aplica a imágenes RGB";"Bernoulli NB no estima probabilidades condicionadas";"Bernoulli NB es adecuado para presencia o ausencia binaria";3;"Bernoulli modela variables binarias."
-"¿Cuál de las siguientes opciones es la única verdadera?";"Gaussian NB modela cada característica continua con una normal condicionada a la clase";"Gaussian NB usa siempre covarianza completa";"Gaussian NB no admite variables continuas";"Gaussian NB es equivalente a K-means";0;"En Gaussian NB se estima media y varianza por característica y clase."
-"¿Cuál de las siguientes opciones es la única verdadera?";"Categorical NB solo funciona con variables gaussianas";"Categorical NB es apropiado para características categóricas discretas";"Categorical NB no estima distribuciones por clase";"Categorical NB es clustering jerárquico";1;"Categorical NB modela probabilidades de categorías condicionadas a clase."
-"¿Cuál de las siguientes opciones es la única verdadera?";"El suavizado fuerza todos los atributos a continuos";"El suavizado elimina las probabilidades a priori";"El suavizado evita probabilidades cero para valores no observados";"El suavizado convierte NB en SVM";2;"El suavizado como Laplace reduce el problema de frecuencia cero."
-"¿Cuál de las siguientes opciones es la única verdadera?";"Una normal multivariada se caracteriza solo por una etiqueta";"Una normal multivariada no representa correlaciones";"Una normal multivariada solo existe en una dimensión";"Una normal multivariada se caracteriza por media y covarianza";3;"Sus parámetros son vector de medias y matriz de covarianza."
-"¿Cuál de las siguientes opciones es la única verdadera?";"La matriz de covarianza describe varianzas y relaciones lineales";"La matriz de covarianza contiene solo probabilidades a priori";"La matriz de covarianza debe ser siempre diagonal";"La matriz de covarianza sustituye la media";0;"La diagonal contiene varianzas y fuera de la diagonal covarianzas."
-"¿Cuál de las siguientes opciones es la única verdadera?";"En clasificación gaussiana no se estiman parámetros por clase";"En clasificación gaussiana se puede modelar P(x dado y) con una normal multivariada por clase";"En clasificación gaussiana se ignora la posteriori";"En clasificación gaussiana las clases no pueden tener medias distintas";1;"Cada clase puede tener su propio modelo de verosimilitud gaussiano."
-"¿Cuál de las siguientes opciones es la única verdadera?";"Con clases equiprobables todas las predicciones son iguales";"Con clases equiprobables no hay verosimilitudes";"Con clases equiprobables la decisión puede depender solo de las verosimilitudes";"Con clases equiprobables no se puede aplicar Bayes";2;"Si las prioris son iguales, no cambian el orden de las clases."
-"¿Cuál de las siguientes opciones es la única verdadera?";"LDA aprende una covarianza distinta por clase";"LDA es clustering por centroides";"LDA no usa información de clase";"LDA suele asumir covarianza compartida entre clases";3;"La covarianza común conduce a fronteras lineales."
-"¿Cuál de las siguientes opciones es la única verdadera?";"QDA permite matrices de covarianza diferentes por clase";"QDA exige la misma media en todas las clases";"QDA produce siempre fronteras lineales";"QDA es idéntico al índice de Gini";0;"Covarianzas distintas permiten fronteras cuadráticas."
-"¿Cuál de las siguientes opciones es la única verdadera?";"Las curvas de igual densidad de una normal multivariada son siempre verticales";"Las curvas de igual densidad pueden verse como elipses o elipsoides";"La densidad no depende de la media";"La covarianza no afecta a la forma";1;"Media y covarianza determinan posición, orientación y escala."
-"¿Cuál de las siguientes opciones es la única verdadera?";"El clustering requiere etiquetas correctas";"El clustering devuelve necesariamente un clasificador";"El clustering es no supervisado porque no usa etiquetas objetivo";"El clustering solo sirve en una dimensión";2;"Agrupa ejemplos buscando estructura sin variable objetivo."
-"¿Cuál de las siguientes opciones es la única verdadera?";"La distancia elegida no cambia el resultado";"Todas las distancias dan los mismos clusters";"Las distancias solo se usan en árboles";"En clustering la distancia influye en los grupos obtenidos";3;"Cambiar la métrica puede cambiar las asignaciones."
-"¿Cuál de las siguientes opciones es la única verdadera?";"La distancia euclídea mide la longitud directa entre puntos";"La euclídea cuenta categorías distintas";"La euclídea siempre es negativa";"La euclídea solo se define para etiquetas";0;"Es la distancia geométrica habitual en espacios vectoriales."
-"¿Cuál de las siguientes opciones es la única verdadera?";"Manhattan calcula el producto escalar";"Manhattan suma diferencias absolutas componente a componente";"Manhattan es la pérdida hinge";"Manhattan solo vale 0 o 1";1;"Es la suma de valores absolutos por coordenada."
-"¿Cuál de las siguientes opciones es la única verdadera?";"K-means empieza con un cluster y lo divide";"K-means no necesita elegir K";"K-means alterna asignación al centroide más cercano y actualización de centroides";"K-means minimiza log loss supervisada";2;"El algoritmo repite asignación y recalculo de centroides."
-"¿Cuál de las siguientes opciones es la única verdadera?";"El centroide debe ser un punto real del dataset";"El centroide es la moda de etiquetas";"El centroide no cambia durante K-means";"El centroide de K-means es la media de puntos asignados";3;"K-means representa cada cluster por la media."
-"¿Cuál de las siguientes opciones es la única verdadera?";"La inicialización de centroides puede afectar al resultado final de K-means";"La inicialización nunca afecta";"La inicialización usa etiquetas verdaderas";"La inicialización sustituye las distancias";0;"K-means puede converger a soluciones locales distintas."
-"¿Cuál de las siguientes opciones es la única verdadera?";"K-means detecta dendrogramas";"K-means no se ve afectado por outliers";"K-means suele funcionar mejor con clusters compactos y de forma similar";"K-means no requiere distancia";2;"Su criterio favorece grupos compactos alrededor de centroides."
-"¿Cuál de las siguientes opciones es la única verdadera?";"K-medians usa posterioris bayesianas";"K-medians usa medianas en lugar de medias";"K-medians es Gaussian NB";"K-medians solo funciona si K=2";1;"La mediana puede ser más robusta que la media ante valores extremos."
-"¿Cuál de las siguientes opciones es la única verdadera?";"K-medoids usa probabilidades a priori";"K-medoids no usa representantes";"K-medoids obliga a clusters de un punto";"K-medoids representa cada cluster con un ejemplo real";3;"El medoide pertenece al conjunto de datos."
-"¿Cuál de las siguientes opciones es la única verdadera?";"El método del codo busca K mediante la evolución del coste intra-cluster";"El método del codo calcula entropía cruzada";"El método del codo elige C en SVM";"El método del codo garantiza siempre el K correcto";0;"Se busca un punto donde la mejora empieza a disminuir claramente."
-"¿Cuál de las siguientes opciones es la única verdadera?";"Silhouette siempre vale 1";"Silhouette compara cohesión interna y separación con otros clusters";"Silhouette solo se define para árboles";"Silhouette no usa distancias";1;"Combina distancia al propio cluster y al cluster vecino más cercano."
-"¿Cuál de las siguientes opciones es la única verdadera?";"En clustering siempre hay etiqueta verdadera";"Todos los algoritmos dan el mismo resultado";"En clustering no siempre existe una única partición correcta";"En clustering se maximiza ganancia de información";2;"La evaluación depende del criterio y de la interpretación del problema."
-"¿Cuál de las siguientes opciones es la única verdadera?";"El clustering aglomerativo empieza con todos los ejemplos juntos";"El aglomerativo requiere centroides aleatorios";"El aglomerativo requiere etiquetas";"El aglomerativo empieza con cada ejemplo como cluster y fusiona clusters";3;"El enfoque aglomerativo construye la jerarquía de abajo arriba."
-"¿Cuál de las siguientes opciones es la única verdadera?";"Un dendrograma representa fusiones de clusters y distancias";"Un dendrograma representa la curva de log loss";"Un dendrograma solo sirve para dos ejemplos";"Un dendrograma es una matriz de covarianza";0;"La altura de las fusiones indica la distancia o disimilitud."
-"¿Cuál de las siguientes opciones es la única verdadera?";"Cortar un dendrograma cambia las etiquetas supervisadas";"Cortar un dendrograma permite obtener una partición en clusters";"Cortar un dendrograma estima una sigmoide";"Cortar un dendrograma convierte K-means en NB";1;"La altura de corte determina cuántos grupos quedan."
-"¿Cuál de las siguientes opciones es la única verdadera?";"El criterio de enlace es una priori";"El criterio de enlace solo se usa en regresión logística";"El criterio de enlace define cómo medir la distancia entre clusters";"El criterio de enlace no afecta a las fusiones";2;"El linkage determina qué clusters se consideran más próximos."
-"¿Cuál de las siguientes opciones es la única verdadera?";"El enlace simple usa siempre la distancia máxima";"El enlace simple es la entropía de una tabla";"El enlace simple requiere covarianza por clase";"El enlace simple usa la distancia mínima entre puntos de dos clusters";3;"Single linkage mide la proximidad por los puntos más cercanos."
-"¿Cuál de las siguientes opciones es la única verdadera?";"El enlace completo usa la distancia máxima entre puntos de dos clusters";"El enlace completo usa media de etiquetas";"El enlace completo no aparece en dendrogramas";"El enlace completo es pérdida hinge";0;"Complete linkage toma el peor caso entre pares de puntos."
-"¿Cuál de las siguientes opciones es la única verdadera?";"El enlace promedio calcula entropía cruzada";"El enlace promedio usa una distancia media entre puntos de los clusters";"El enlace promedio ignora todos los puntos salvo el centroide";"El enlace promedio obliga a K=2";1;"Average linkage promedia las distancias entre puntos de ambos clusters."
-"¿Cuál de las siguientes opciones es la única verdadera?";"El jerárquico es siempre supervisado";"El jerárquico no usa distancias";"El jerárquico no requiere fijar inicialmente el número exacto de clusters para construir el dendrograma";"El jerárquico siempre produce fronteras lineales";2;"Se construye el dendrograma completo y después se decide el corte."
-"¿Cuál de las siguientes opciones es la única verdadera?";"Un clasificador gaussiano bayesiano es clustering sin etiquetas";"Un clasificador gaussiano no estima medias";"Un clasificador gaussiano no hace inferencia";"Un clasificador bayesiano gaussiano incorpora prioris y verosimilitudes";3;"Combina P(y) y P(x dado y) para estimar la posteriori."
-"¿Cuál de las siguientes opciones es la única verdadera?";"La diferencia entre supervisado y no supervisado depende de la presencia de variable objetivo etiquetada";"En aprendizaje supervisado nunca se usan etiquetas";"En aprendizaje no supervisado siempre se minimiza log loss";"Todos los modelos supervisados son probabilísticos";0;"El aprendizaje supervisado usa etiquetas objetivo y el no supervisado busca estructura."
+pregunta;correcta;explicacion
+La planificación consiste en encontrar una secuencia de acciones que permita alcanzar un objetivo;0;Definición básica del tema 9.
+En STRIPS, un estado se representa como una conjunción de literales positivos;0;Los estados usan literales positivos.
+En STRIPS, un objetivo puede estar parcialmente especificado;0;Basta con que contenga los literales pedidos.
+Un estado satisface un objetivo si contiene todos sus literales;0;Puede tener además otros literales.
+Una acción se describe con precondiciones y efectos;0;Esa es la estructura clásica de una acción.
+Un esquema de acción puede generar muchas acciones al instanciar sus variables;0;Las variables se sustituyen por objetos concretos.
+En STRIPS, los literales no mencionados en el efecto permanecen sin cambios;0;Es la hipótesis de marco.
+La solución más simple en planificación es una secuencia de acciones desde el estado inicial al objetivo;0;Es la forma básica de solución.
+ADL es más expresivo que STRIPS;0;ADL amplía la capacidad descriptiva.
+En planificación de progresión, la búsqueda comienza en el estado inicial;0;Es la búsqueda hacia delante.
+En progresión, una acción es aplicable si sus precondiciones están satisfechas;0;Solo se ejecutan acciones válidas en el estado.
+El test de objetivos comprueba si el estado actual satisface el objetivo;0;Ese es el criterio de parada.
+La planificación de regresión busca hacia atrás desde el objetivo;0;Parte de las metas.
+La búsqueda hacia atrás permite considerar solo acciones relevantes;0;Ese es su mayor interés.
+En regresión, una acción relevante alcanza al menos un literal deseado;0;Debe ayudar a conseguir objetivos.
+Una acción consistente no deshace ningún literal deseado;0;Evita borrar objetivos ya fijados.
+La planificación de orden parcial permite descomponer en subproblemas;0;No obliga a una única secuencia.
+En POP, el plan se representa como un grafo de acciones;0;No como una lista lineal cerrada.
+Las acciones Inicio y Final delimitan el plan en POP;0;Marcan principio y fin.
+Un plan POP incluye acciones, restricciones de orden, enlaces causales y precondiciones abiertas;0;Son sus cuatro componentes.
+En STRIPS, los estados se escriben como secuencias de literales negativos;1;STRIPS usa literales positivos.
+En STRIPS, un objetivo debe estar completamente especificado;1;Puede ser parcial.
+Un esquema de acción no puede instanciarse con distintos objetos;1;Sí puede.
+En STRIPS, cada efecto cambia todos los literales del estado;1;Los no mencionados se mantienen.
+La solución de un problema de planificación siempre es una sola acción;1;Normalmente es una secuencia.
+En planificación de progresión, la búsqueda comienza en el estado objetivo;1;Comienza en el inicial.
+En progresión, una acción es aplicable aunque sus precondiciones sean falsas;1;Deben cumplirse.
+La planificación de regresión solo considera acciones irrelevantes;1;Busca acciones útiles.
+En regresión, una acción relevante es la que deshace los literales deseados;1;Debe alcanzarlos, no destruirlos.
+POP exige un orden estrictamente cronológico desde el inicio;1;POP relaja el orden.
+Los planes de orden parcial siempre son secuencias lineales únicas;1;Pueden tener varias linealizaciones.
+Un plan POP con precondiciones abiertas ya es solución;1;Aún faltan precondiciones por resolver.
+Un plan POP consistente puede contener ciclos en sus restricciones de orden;1;Los ciclos rompen la consistencia.
+En POP, las acciones Inicio y Final se omiten porque no aportan nada;1;Se usan para estructurar el plan.
+Los grafos de planificación funcionan solo con problemas no proposicionales;1;Funcionan en problemas proposicionales.
+En un grafo de planificación, S0 representa el estado final;1;S0 es el inicial.
+Los grafos de planificación no usan acciones persistentes;1;Sí las usan para el problema del marco.
+STRIPS y ADL no pueden proposicionalizarse;1;Sí pueden convertirse.
+Si dos niveles consecutivos de un grafo de planificación son iguales, aún falta mucha expansión;1;Eso indica estabilización.
+Dos literales nunca pueden ser mutuamente excluyentes en un grafo de planificación;1;Sí pueden serlo.
+Una heurística estima el coste o la distancia hasta el objetivo;0;Es su función básica.
+Las heurísticas ayudan a reducir espacio de búsqueda y tiempo;0;Guían la exploración.
+Resolver un problema de planificación puede ser NP-completo;0;Por eso se usan aproximaciones.
+Una heurística admisible no sobrestima;0;Debe ser optimista.
+Con heurísticas admisibles se puede usar A* para obtener soluciones óptimas;0;A* necesita esa propiedad para optimalidad.
+Una forma de construir heurísticas es usar problemas aproximados;0;Se simplifica el problema original.
+Otra forma es asumir independencia de subobjetivos;0;Se calcula cada submeta por separado.
+En problemas aproximados se pueden simplificar o eliminar precondiciones o efectos;0;Eso define el problema relajado.
+Si se eliminan todas las precondiciones, todas las acciones son aplicables;0;Desaparece el filtro de aplicabilidad.
+En esa aproximación, los pasos estimados pueden igualar los objetivos no alcanzados;0;Es una cota simple.
+La heurística basada en efectos positivos conserva precondiciones y elimina efectos negativos;0;Es la supresión de listas vacías.
+Esa heurística busca el conjunto mínimo de acciones que cubre todos los objetivos;0;Cubre las metas con pocas acciones.
+La heurística de efectos positivos suele ser más precisa que la independencia pura;0;Tiene más información.
+La independencia de subobjetivos supone que cada subobjetivo se resuelve por separado;0;Es su hipótesis central.
+Sumar los costes individuales es la heurística de independencia;0;Se agregan los costes de cada submeta.
+La independencia es optimista cuando hay interacciones negativas;0;Ignora conflictos entre subplanes.
+La independencia puede ser pesimista e inadmisible si aparecen acciones redundantes;0;Puede contar de más.
+En POP, la heurística básica cuenta las precondiciones abiertas distintas;0;Ese es el recuento simple.
+Una mejora en POP es ignorar las precondiciones abiertas que ya están en el estado inicial;0;Así se evita contar metas ya satisfechas.
+En POP, elegir qué precondición abierta resolver primero afecta a la eficiencia;0;La elección cambia la ramificación.
+Las heurísticas siempre devuelven el coste óptimo exacto;1;Solo estiman.
+Una heurística es lo mismo que el algoritmo de búsqueda;1;Son conceptos distintos.
+Los problemas aproximados se construyen añadiendo más restricciones;1;Se simplifican, no se complican.
+Eliminar todas las precondiciones hace que ninguna acción sea aplicable;1;Hace todas aplicables.
+La heurística de efectos positivos elimina los efectos positivos;1;Elimina los negativos.
+La independencia de subobjetivos siempre da el coste exacto total;1;Es solo una aproximación.
+La independencia de subobjetivos es siempre admisible;1;Puede ser inadmisible.
+Las interacciones negativas hacen que la heurística de independencia sea pesimista;1;En general la vuelven optimista.
+Las acciones redundantes no afectan a la heurística de independencia;1;Sí pueden volverla inadmisible.
+La heurística básica de POP cuenta solo los objetivos ya resueltos;1;Cuenta precondiciones abiertas.
+La mejora de POP cuenta como abiertas las precondiciones ya verdaderas en el estado inicial;1;Justo hace lo contrario.
+En POP, elegir la precondición abierta no influye en el espacio de búsqueda;1;Sí influye.
+Las heurísticas de planificación no pueden combinarse con A*;1;Sí pueden.
+Un problema aproximado conserva todo y solo cambia el objetivo;1;La relajación cambia acciones o condiciones.
+La independencia de subobjetivos usa como coste final el máximo de los costes parciales;1;Lo habitual es sumar.
+La heurística de efectos positivos busca el mayor conjunto posible de acciones;1;Busca el mínimo que cubre.
+Las heurísticas de planificación solo sirven en POP y nunca en búsqueda en espacios de estado;1;También se usan en espacio de estados.
+Para ser válida, una heurística debe calcularse exactamente;1;Solo debe estimar de forma útil.
+Las heurísticas no sirven para reducir el tiempo de búsqueda;1;Sí pueden reducirlo.
+Las heurísticas de planificación no ayudan a encontrar soluciones;1;Sí ayudan a guiarlas.
