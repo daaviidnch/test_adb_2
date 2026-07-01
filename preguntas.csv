@@ -1,81 +1,101 @@
 pregunta;correcta;explicacion
-La planificación consiste en encontrar una secuencia de acciones que permita alcanzar un objetivo;0;Definición básica del tema 9.
-En STRIPS, un estado se representa como una conjunción de literales positivos;0;Los estados usan literales positivos.
-En STRIPS, un objetivo puede estar parcialmente especificado;0;Basta con que contenga los literales pedidos.
-Un estado satisface un objetivo si contiene todos sus literales;0;Puede tener además otros literales.
-Una acción se describe con precondiciones y efectos;0;Esa es la estructura clásica de una acción.
-Un esquema de acción puede generar muchas acciones al instanciar sus variables;0;Las variables se sustituyen por objetos concretos.
-En STRIPS, los literales no mencionados en el efecto permanecen sin cambios;0;Es la hipótesis de marco.
-La solución más simple en planificación es una secuencia de acciones desde el estado inicial al objetivo;0;Es la forma básica de solución.
-ADL es más expresivo que STRIPS;0;ADL amplía la capacidad descriptiva.
-En planificación de progresión, la búsqueda comienza en el estado inicial;0;Es la búsqueda hacia delante.
-En progresión, una acción es aplicable si sus precondiciones están satisfechas;0;Solo se ejecutan acciones válidas en el estado.
-El test de objetivos comprueba si el estado actual satisface el objetivo;0;Ese es el criterio de parada.
-La planificación de regresión busca hacia atrás desde el objetivo;0;Parte de las metas.
-La búsqueda hacia atrás permite considerar solo acciones relevantes;0;Ese es su mayor interés.
-En regresión, una acción relevante alcanza al menos un literal deseado;0;Debe ayudar a conseguir objetivos.
-Una acción consistente no deshace ningún literal deseado;0;Evita borrar objetivos ya fijados.
-La planificación de orden parcial permite descomponer en subproblemas;0;No obliga a una única secuencia.
-En POP, el plan se representa como un grafo de acciones;0;No como una lista lineal cerrada.
-Las acciones Inicio y Final delimitan el plan en POP;0;Marcan principio y fin.
+Búsqueda no informada no utiliza información adicional más allá de la formulación del problema;0;Esa es la definición.
+En búsqueda no informada, las estrategias se distinguen por el orden de expansión;0;Cambia el criterio de selección.
+La búsqueda en amplitud expande primero todos los nodos de menor profundidad;0;Va por niveles.
+En amplitud, la lista abierta funciona como una cola FIFO;0;Inserta al final y saca por delante.
+La búsqueda en amplitud encuentra la solución de menor profundidad;0;Selecciona la meta más superficial.
+La búsqueda en amplitud siempre es óptima aunque los costes de acción sean distintos;1;Solo garantiza menor profundidad.
+La búsqueda en amplitud es completa si el factor de ramificación es finito;0;Con branching finito encuentra la meta si existe.
+La búsqueda en profundidad explora una rama hasta el fondo antes de pasar a otra;0;Es una exploración por ramas.
+En profundidad, la lista abierta funciona como una pila LIFO;0;Inserta al principio.
+La búsqueda en profundidad garantiza encontrar solución en espacios infinitos;1;Puede quedarse en una rama infinita.
+La búsqueda en profundidad es óptima;1;No minimiza coste ni profundidad.
+La búsqueda en profundidad puede necesitar volver más de un nivel para seguir explorando;0;Hace backtracking.
+La búsqueda de coste uniforme expande nodos por valores crecientes de g;0;Ordena por coste acumulado.
+La búsqueda de coste uniforme es completa y óptima con costes positivos;0;Funciona como mejor primero por coste.
+La búsqueda de coste uniforme degenera en amplitud cuando todos los costes de acción son iguales;0;Ambas exploran por capas.
+En coste uniforme, los valores de g crecen a lo largo de todos los caminos si los costes son positivos;0;Cada paso suma coste positivo.
+La búsqueda no informada es exhaustiva porque no usa información adicional del dominio;0;Solo usa la formulación del problema.
+La heurística ayuda a decidir qué nodo expandir sin explorar todo el espacio;0;Guía la búsqueda.
+Una heurística fuerte garantiza siempre la solución óptima;1;Puede ayudar sin asegurar óptimo por sí sola.
+La interpretación fuerte de heurística dice que suele ayudar pero no garantiza resolver;0;Es la idea práctica.
+La interpretación débil combina un método riguroso con información heurística;0;Es un método más guiado.
+La búsqueda primero el mejor elige el nodo con menor h*;0;Expande el más prometedor según heurística.
+La búsqueda avara es óptima porque usa heurística;1;No tiene en cuenta g.
+La búsqueda avara ignora el coste ya acumulado g;0;Solo mira h*.
+A* combina g y h para elegir nodos;0;Suma coste real y estimado.
+En A*, f(n) = g(n) + h(n);0;Es la función de evaluación.
+A* elige entre las hojas el nodo de menor f*;0;Ordena la frontera por f*.
+A* es completo;0;Encuentra solución si existe.
+A* es óptimo con heurísticas optimistas;0;La admisibilidad preserva optimalidad.
+Una heurística optimista nunca sobreestima el coste real;0;Es una cota inferior.
+En algunas fuentes, una heurística optimista se llama admisible;0;Son términos equivalentes en ese contexto.
+Si h* = 0 para todos los nodos, A* degenera en coste uniforme;0;Sin heurística manda g.
+Si h*(n)=h(n) para todos los nodos, calcular h* suele equivaler a resolver el problema completo;0;La información es completa.
+Cuanto más informada es una heurística optimista, menos nodos expande A*;0;Mejora la poda.
+Si h1* es más informada que h2*, A*(h1*) expande como mucho tantos nodos como A*(h2*);0;Nunca peor en expansiones.
+Si h1* es más informada que h2*, entonces A*(h2*) expande al menos tantos nodos como A*(h1*);0;La más informada domina.
+La calidad de la heurística influye en el número de nodos expandidos;0;A mejor heurística, menos expansiones.
+La calidad de la heurística no influye en la calidad de la solución si A* usa una heurística optimista;0;La optimalidad se mantiene.
+El valor de f puede disminuir a lo largo de un camino si la estimación heurística cae más que aumenta g;0;Puede bajar por la estimación.
+En coste uniforme, los valores de g siempre aumentan porque los costes de acción son naturales positivos;0;Nunca disminuyen.
+Una heurística es lo mismo que el algoritmo de búsqueda;1;La heurística solo evalúa nodos.
+La distancia en línea recta es un ejemplo típico de heurística en problemas de rutas;0;Es una cota inferior habitual.
+El número de bloques descolocados es un ejemplo de heurística optimista en mundo de bloques;0;Cuenta piezas fuera de lugar.
+En una red 2D regular de coste unitario, una heurística de relajación puede ser max(|u-x|, |v-y|);0;Relaja permitiendo diagonales.
+En el 8-puzzle, el número de piezas descolocadas puede servir como heurística optimista;0;Es una heurística clásica.
+En el 8-puzzle, la suma de distancias de Manhattan es una heurística optimista;0;Suma distancias por ficha.
+En el 8-puzzle, Manhattan suele ser más informada que contar piezas descolocadas;0;Aporta más detalle.
+Dos heurísticas optimistas pueden combinarse tomando el máximo de sus valores;0;El máximo sigue siendo optimista.
+Si una heurística es más informada que otra, ambas pueden usarse en A* y la más informada suele ser preferible;0;Expande menos nodos.
+Un problema relajado conserva el mismo conjunto de estados, estado inicial y metas que el original;0;Solo cambia restricciones.
+En un problema relajado se pueden añadir acciones respecto al problema original;0;La relajación amplía el espacio de acciones.
+En un problema relajado, el coste de las acciones compartidas sigue siendo el mismo;0;Se mantiene el coste.
+Relajar precondiciones es una forma sistemática de construir heurísticas;0;Simplifica el problema.
+Un problema relajado puede servir para obtener una heurística optimista;0;La relajación da una cota inferior.
+Una heurística obtenida por relajación suele subestimar o igualar el coste real;0;No debe sobreestimar.
+La heurística de independencia de subobjetivos supone que cada subobjetivo se resuelve por separado;0;Los trata de forma independiente.
+La heurística de independencia suele sumar los costes de los subobjetivos;0;Agrega costes parciales.
+La independencia de subobjetivos ignora posibles interacciones entre metas;0;No modela conflictos.
+La heurística de independencia siempre es exacta;1;Es una aproximación.
+La heurística de efectos positivos conserva precondiciones y elimina efectos negativos;0;Es una relajación clásica.
+La heurística de efectos positivos busca el conjunto mínimo de acciones que cubre los objetivos;0;Selecciona acciones útiles.
+Eliminar todas las precondiciones hace que todas las acciones sean aplicables;0;Desaparece el filtro de aplicabilidad.
+Si se eliminan todas las precondiciones, la relajación sigue siendo una cota inferior útil;0;El problema queda más fácil.
+La heurística básica en POP puede contar las precondiciones abiertas;0;Es una estimación simple.
+Una mejora en POP ignora las precondiciones abiertas que ya están satisfechas en el estado inicial;0;No hace falta contarlas.
+En POP, elegir qué precondición abierta resolver primero afecta a la eficiencia;0;Cambia la ramificación.
+En POP, un plan con precondiciones abiertas ya está completamente resuelto;1;Aún faltan condiciones por cerrar.
 Un plan POP incluye acciones, restricciones de orden, enlaces causales y precondiciones abiertas;0;Son sus cuatro componentes.
-En STRIPS, los estados se escriben como secuencias de literales negativos;1;STRIPS usa literales positivos.
-En STRIPS, un objetivo debe estar completamente especificado;1;Puede ser parcial.
-Un esquema de acción no puede instanciarse con distintos objetos;1;Sí puede.
-En STRIPS, cada efecto cambia todos los literales del estado;1;Los no mencionados se mantienen.
-La solución de un problema de planificación siempre es una sola acción;1;Normalmente es una secuencia.
-En planificación de progresión, la búsqueda comienza en el estado objetivo;1;Comienza en el inicial.
-En progresión, una acción es aplicable aunque sus precondiciones sean falsas;1;Deben cumplirse.
-La planificación de regresión solo considera acciones irrelevantes;1;Busca acciones útiles.
-En regresión, una acción relevante es la que deshace los literales deseados;1;Debe alcanzarlos, no destruirlos.
-POP exige un orden estrictamente cronológico desde el inicio;1;POP relaja el orden.
-Los planes de orden parcial siempre son secuencias lineales únicas;1;Pueden tener varias linealizaciones.
-Un plan POP con precondiciones abiertas ya es solución;1;Aún faltan precondiciones por resolver.
+En POP, las acciones Inicio y Final ayudan a delimitar el plan;0;Marcan principio y fin.
 Un plan POP consistente puede contener ciclos en sus restricciones de orden;1;Los ciclos rompen la consistencia.
-En POP, las acciones Inicio y Final se omiten porque no aportan nada;1;Se usan para estructurar el plan.
-Los grafos de planificación funcionan solo con problemas no proposicionales;1;Funcionan en problemas proposicionales.
-En un grafo de planificación, S0 representa el estado final;1;S0 es el inicial.
-Los grafos de planificación no usan acciones persistentes;1;Sí las usan para el problema del marco.
-STRIPS y ADL no pueden proposicionalizarse;1;Sí pueden convertirse.
-Si dos niveles consecutivos de un grafo de planificación son iguales, aún falta mucha expansión;1;Eso indica estabilización.
-Dos literales nunca pueden ser mutuamente excluyentes en un grafo de planificación;1;Sí pueden serlo.
-Una heurística estima el coste o la distancia hasta el objetivo;0;Es su función básica.
-Las heurísticas ayudan a reducir espacio de búsqueda y tiempo;0;Guían la exploración.
-Resolver un problema de planificación puede ser NP-completo;0;Por eso se usan aproximaciones.
-Una heurística admisible no sobrestima;0;Debe ser optimista.
-Con heurísticas admisibles se puede usar A* para obtener soluciones óptimas;0;A* necesita esa propiedad para optimalidad.
-Una forma de construir heurísticas es usar problemas aproximados;0;Se simplifica el problema original.
-Otra forma es asumir independencia de subobjetivos;0;Se calcula cada submeta por separado.
-En problemas aproximados se pueden simplificar o eliminar precondiciones o efectos;0;Eso define el problema relajado.
-Si se eliminan todas las precondiciones, todas las acciones son aplicables;0;Desaparece el filtro de aplicabilidad.
-En esa aproximación, los pasos estimados pueden igualar los objetivos no alcanzados;0;Es una cota simple.
-La heurística basada en efectos positivos conserva precondiciones y elimina efectos negativos;0;Es la supresión de listas vacías.
-Esa heurística busca el conjunto mínimo de acciones que cubre todos los objetivos;0;Cubre las metas con pocas acciones.
-La heurística de efectos positivos suele ser más precisa que la independencia pura;0;Tiene más información.
-La independencia de subobjetivos supone que cada subobjetivo se resuelve por separado;0;Es su hipótesis central.
-Sumar los costes individuales es la heurística de independencia;0;Se agregan los costes de cada submeta.
-La independencia es optimista cuando hay interacciones negativas;0;Ignora conflictos entre subplanes.
-La independencia puede ser pesimista e inadmisible si aparecen acciones redundantes;0;Puede contar de más.
-En POP, la heurística básica cuenta las precondiciones abiertas distintas;0;Ese es el recuento simple.
-Una mejora en POP es ignorar las precondiciones abiertas que ya están en el estado inicial;0;Así se evita contar metas ya satisfechas.
-En POP, elegir qué precondición abierta resolver primero afecta a la eficiencia;0;La elección cambia la ramificación.
-Las heurísticas siempre devuelven el coste óptimo exacto;1;Solo estiman.
-Una heurística es lo mismo que el algoritmo de búsqueda;1;Son conceptos distintos.
-Los problemas aproximados se construyen añadiendo más restricciones;1;Se simplifican, no se complican.
-Eliminar todas las precondiciones hace que ninguna acción sea aplicable;1;Hace todas aplicables.
-La heurística de efectos positivos elimina los efectos positivos;1;Elimina los negativos.
-La independencia de subobjetivos siempre da el coste exacto total;1;Es solo una aproximación.
-La independencia de subobjetivos es siempre admisible;1;Puede ser inadmisible.
-Las interacciones negativas hacen que la heurística de independencia sea pesimista;1;En general la vuelven optimista.
-Las acciones redundantes no afectan a la heurística de independencia;1;Sí pueden volverla inadmisible.
-La heurística básica de POP cuenta solo los objetivos ya resueltos;1;Cuenta precondiciones abiertas.
-La mejora de POP cuenta como abiertas las precondiciones ya verdaderas en el estado inicial;1;Justo hace lo contrario.
-En POP, elegir la precondición abierta no influye en el espacio de búsqueda;1;Sí influye.
-Las heurísticas de planificación no pueden combinarse con A*;1;Sí pueden.
-Un problema aproximado conserva todo y solo cambia el objetivo;1;La relajación cambia acciones o condiciones.
-La independencia de subobjetivos usa como coste final el máximo de los costes parciales;1;Lo habitual es sumar.
-La heurística de efectos positivos busca el mayor conjunto posible de acciones;1;Busca el mínimo que cubre.
-Las heurísticas de planificación solo sirven en POP y nunca en búsqueda en espacios de estado;1;También se usan en espacio de estados.
-Para ser válida, una heurística debe calcularse exactamente;1;Solo debe estimar de forma útil.
-Las heurísticas no sirven para reducir el tiempo de búsqueda;1;Sí pueden reducirlo.
-Las heurísticas de planificación no ayudan a encontrar soluciones;1;Sí ayudan a guiarlas.
+La planificación de orden parcial obliga a una única secuencia lineal desde el principio;1;Permite orden parcial.
+En orden parcial puede haber varias linealizaciones;0;No fija una sola secuencia.
+La búsqueda avara no toma en cuenta el coste de llegar al nodo;0;Solo considera la cercanía estimada.
+En la búsqueda avara, h* indica la distancia estimada a la meta;0;Ordena por heurística.
+En la búsqueda avara, la lista abierta se ordena por h*;0;Elige menor heurística.
+La búsqueda avara puede encontrar rápidamente una solución mala;0;Puede priorizar caminos engañosos.
+A* almacena el valor g de cada nodo expandido;0;Guarda el coste acumulado.
+A* mantiene la lista abierta ordenada por valores crecientes de f*;0;Ordena por g+h.
+A* suele quedarse antes sin memoria que sin tiempo, igual que amplitud;0;Su coste espacial es alto.
+IDA*, SMA* y RBFS son variantes para reducir la memoria de A*;0;Reducen almacenamiento.
+En A*, si h*(n)=h(n) exacta, la complejidad puede ser lineal sin contar el cálculo de h*;0;La información completa guía perfecto.
+Si h*=0, A* se comporta como búsqueda de coste uniforme;0;La heurística desaparece.
+La calidad de la heurística no afecta al número de nodos expandidos por A*;1;Sí cambia las expansiones.
+La calidad de la heurística sí afecta al número de nodos expandidos por A*;0;Mejor heurística, menos nodos.
+Si varias heurísticas son fáciles de evaluar, puede usarse el máximo de todas ellas;0;El máximo conserva la admisibilidad.
+A* es óptimo para cualquier heurística, incluso si sobreestima;1;Si sobreestima puede perder optimalidad.
+Una heurística optimista puede ser demasiado baja, pero no demasiado alta;0;Nunca sobreestima.
+La búsqueda on-line primero planifica todo y después actúa en el mundo real;1;Eso es búsqueda offline.
+La búsqueda on-line combina percepción, búsqueda y acción;0;Alterna percibir y actuar.
+La búsqueda on-line es útil si no hay modelo exacto del entorno;0;Sirve con información incompleta.
+En búsqueda on-line no se puede asegurar en general optimalidad ni completitud;0;Depende del entorno.
+El índice competitivo compara el coste real del agente con el óptimo;0;Es un cociente de costes.
+El índice competitivo siempre es finito;1;Puede ser infinito.
+La búsqueda con horizonte mira k acciones hacia delante antes de decidir;0;Evalúa un horizonte limitado.
+En búsqueda con horizonte se elige la acción que lleva al estado hoja de menor f* en profundidad k;0;Selecciona el mejor leaf.
+En búsqueda con horizonte, cuanto más profundo es un nodo, mayor suele ser el error heurístico;1;Normalmente el error disminuye con la profundidad.
+Si h* es consistente, puede podarse una rama cuando f*(n') >= alpha;0;La cota alfa permite podar.
+En búsqueda con horizonte, alpha representa el mínimo f* encontrado en las hojas del nivel k;0;Es la mejor hoja vista.
+En una ruta con costes positivos, la búsqueda de coste uniforme puede reutilizar la idea de prioridad por g;0;Ordena por coste acumulado.
+Un buen heurístico suele reducir tiempo de búsqueda pero no garantiza mejora en el peor caso;0;Mejora la media, no asegura el peor caso.
